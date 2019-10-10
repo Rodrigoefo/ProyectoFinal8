@@ -7,5 +7,13 @@ class User < ApplicationRecord
 
 enum user_type: [:freelance, :influencer, :tradicional]
 
+has_one :profile
+after_create :create_user_profile
+
+private
+
+def create_user_profile
+   create_profile!
+ end
 
 end

@@ -1,0 +1,34 @@
+<h1>Edita tu perfil</h1>
+<p><%= link_to "Regresar a tus pautas", users_timeline_path %></p>
+
+<p><%= current_user.name %> <%= current_user.lastname %></p>
+
+<p><%= current_user.email %></p>
+
+
+<%= form_for @profile, :url => users_profile_path do |form| %>
+
+  <div class="field">
+    <%= form.label :photo, "Imagen de perfil" %>
+    <%= form.text_field :photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone, "Teléfono" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description%>
+  </div>
+
+  <div class="field">
+    <%= form.label :social_network, "Nombre de la tu red social" %>
+    <%= form.text_field :social_network %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
