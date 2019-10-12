@@ -2,6 +2,9 @@
 <p>Find me in app/views/users/profile/show.html.erb</p>
 <%= link_to "Regresar a tus pautas", users_timeline_path %>
 
-<p><%= @profile.photo %></p>
+<p><%= current_user.name %></p>
+<p><%= current_user.email %></p> 
+
+<p><%= image_tag @profile.photo_url, size: "150x150" %></p>
 <p><%= @profile.phone %></p>
 <p><%= @profile.description %></p>
