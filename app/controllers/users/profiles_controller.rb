@@ -12,19 +12,24 @@ class Users::ProfilesController < ApplicationController
   def update
     @profile=current_user.profile
     respond_to do |format|
-      if @profile.update(profile_params)
-        format.html { redirect_to users_profile_path, notice: 'Profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @profile }
+      if current_user.update(user_params)
+        format.html { redirect_to users_profile_path, notice: 'Tu perfil se ha actualizado' }
       else
         format.html { render :edit }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
   end
 
   private
 
-  def profile_params
-       params.require(:profile).permit(:photo, :phone, :description, :social_network, :social_network_url, :media_name)
+  def user_params
+     attrs = if current_user.freelance?
+       [:photo, :phone, :description]
+     elsif current_user.influencer?
+       [:photo, :phone, :description, :social_network, :social_network_url]
+     elsif current_user.tradicional?
+       [:photo, :phone, :description, :media_name]
      end
+     params.require(:user).permit(:name, :lastname, profile_attributes: attrs)
+   end
 end

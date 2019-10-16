@@ -1,10 +1,48 @@
-<h1>Users::Profile#show</h1>
-<p>Find me in app/views/users/profile/show.html.erb</p>
-<%= link_to "Regresar a tus pautas", users_timeline_path %>
+<div class="row">
+  <div class="col-sm-3">
+    <% if current_user.profile.photo_url %>
+    <p><%= image_tag @profile.photo_url, size: "185x185" %></p>
+    <% end %>
+    <h3><%= current_user.name %> <%= current_user.lastname%></h3>
 
-<p><%= current_user.name %></p>
-<p><%= current_user.email %></p> 
+    <%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-secondary" %>
 
-<p><%= image_tag @profile.photo_url, size: "150x150" %></p>
-<p><%= @profile.phone %></p>
-<p><%= @profile.description %></p>
+  </div>
+
+  <div class="col-sm-9">
+    <table class="table table-sm"
+      <tbody>
+        <tr class="thead-light">
+          <th class="celda bg-warning"> Email</th>
+            <td > <%= current_user.email %></td>
+        </tr>
+
+        <tr class="thead-light">
+          <th class="celda"> Teléfono</th>
+            <td> <%= @profile.phone %></td>
+        </tr>
+
+        <% if current_user.influencer?%>
+        <tr class="thead-light">
+          <th class="celda"> Red Social</th>
+            <td> <%= @profile.social_network %></td>
+          </tr>
+        <tr class="thead-light">
+          <th class="celda"> Dirección Red Social</th>
+            <td> <%= @profile.social_network_url %></td>
+        </tr>
+        <%end%>
+
+        <%if current_user.tradicional? %>
+        <tr class="thead-light">
+          <th class="celda"> Medio donde trabaja</th>
+            <td> <%= @profile.media_name %></td>
+        </tr>
+        <%end %>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
