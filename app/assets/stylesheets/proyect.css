@@ -1,14 +1,18 @@
 .form_layout {
   width: 50%;
   margin: auto;
-
 }
 
 th.celda {
   width: 25%;
 }
 
-
 .avatar {
   border-radius: 5%;
 }
+
+.trix-content {
+		height: 150px !important;
+		max-height: 150px !important;
+	  overflow-y: auto !important;
+	}

@@ -11,7 +11,7 @@
 
   </div>
 
-  <div class="col-sm-4">
+  <div class="col-sm-8">
 
     <%= form_for current_user, url: users_profile_path do |form| %>
       <% if current_user.errors.any? %>
@@ -50,6 +50,8 @@
       </div>
     </div>
 
+<div class="row">
+  <div class="col">
     <div class="form-group">
       <div class="control-label">
         <%= profile_form.label :phone, "Teléfono" %>
@@ -57,14 +59,21 @@
       </div>
 
     </div>
-    <div class= "form-group">
-      <div class="control-label">
-        <% if current_user.influencer? %>
-        <%= profile_form.label :social_network, "Nombre de tu Red Social" %>
-        <%= profile_form.text_field :social_network, class: "form-control"%>
-        <% end  %>
-      </div>
-    </div>
+
+  </div>
+  <div class="col">
+
+        <div class= "form-group">
+          <div class="control-label">
+            <% if current_user.influencer? %>
+            <%= profile_form.label :social_network, "Nombre de tu Red Social" %>
+            <%= profile_form.text_field :social_network, class: "form-control"%>
+            <% end  %>
+          </div>
+        </div>
+
+  </div>
+</div>
 
     <div class= "form-group">
       <div class="control-label">
@@ -87,7 +96,9 @@
     <div class="form-group">
       <div class="control-lavel">
         <%= profile_form.label :description, "Copia tu CV" %>
-        <%= profile_form.text_field :description, class: "form-control"%>
+        <%= profile_form.hidden_field :description, class: "form-control", id: :description_editor%>
+          <trix-editor class="trix-content" input="description_editor" > </trix-editor>
+
       </div>
 
     </div>
