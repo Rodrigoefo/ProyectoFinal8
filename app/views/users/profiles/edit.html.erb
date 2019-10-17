@@ -2,9 +2,8 @@
 
 <div class="row">
   <div class="col-sm-4">
-    <h3>Edita tu perfil</h3>
     <% if current_user.profile.photo_url %>
-    <p><%= image_tag current_user.profile.photo_url, size: "185x185" %></p>
+    <p><%= image_tag current_user.profile.photo_url, class: "avatar", size: "185x185" %></p>
     <% end %>
     <h4><%= current_user.name %> <%= current_user.lastname %></h4>
     <p><%= current_user.email %></p>
@@ -47,6 +46,7 @@
       <div class="control-label">
         <%= profile_form.label :photo, "Sube una foto"%>
         <%= profile_form.file_field :photo%>
+
       </div>
     </div>
 

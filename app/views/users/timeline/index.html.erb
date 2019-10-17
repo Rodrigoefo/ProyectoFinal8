@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-sm-4">
     <% if current_user.profile.photo_url %>
-    <p><%= image_tag current_user.profile.photo_url, size: "185x185" %></p>
+    <p><%= image_tag current_user.profile.photo_url, class: "avatar", size: "185x185" %></p>
     <% end %>
     <h4><%= @user.name %> <%= @user.lastname %></h4>
     <p><i><%= @user.email %></i></p>
