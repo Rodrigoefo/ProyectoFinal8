@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   root "home#index"
 
   devise_for :users, controllers: {
@@ -8,7 +7,13 @@ Rails.application.routes.draw do
          registrations: 'users/registrations'
        }
 
-      namespace :users do
+  devise_for :organizators, controllers: {
+         sessions: 'organizators/sessions',
+         registrations: 'organizators/registrations'
+       }
+
+
+    namespace :users do
         get :timeline, to: 'timeline#index'
         resource :profile
       end

@@ -24,8 +24,9 @@
           <div class="card-body">
             <h5 class="card-title">¿Eres una Organización?</h5>
             <p class="card-text">Si buscas dar a conocer una noticias, crear una pauta y convocar a muchos comunicadores, entonces ingresa o regìstrate acá.</p>
-            <span class="card-text btn btn-success"> Ingresa</span>
-            <span class="card-text btn btn-dark"> Regístarte</span>
+
+            <span><%=link_to "Ingresar", new_organizator_session_path, class: "card-text btn btn-success"%></span>
+            <span><%=link_to "Registrarse", new_organizator_registration_path, class: "card-text btn btn-dark"%></span>
 
 
 
