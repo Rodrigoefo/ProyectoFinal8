@@ -11,7 +11,7 @@ has_one :profile, dependent: :destroy
 after_create :create_user_profile
 
 
-accepts_nested_attributes_for :profile
+accepts_nested_attributes_for :profile, update_only: true
 
 private
 

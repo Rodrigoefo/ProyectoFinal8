@@ -1,1 +1,39 @@
-<h1>Home. Página principal</h1>
+
+  <div class="row">
+    <div class="col-sm-6">
+
+      <div class="card-group mt-1">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">¿Eres un comunicador?</h5>
+            <p class="card-text">Si eres un periodista, fotógrafo o influencer y buscas noticias que cubrir, ingresa o registrate acá </p>
+
+            <span><%=link_to "Ingresar", new_user_session_path, class: "card-text btn btn-success"%></span>
+            <span><%=link_to "Regístrarse", new_user_registration_path, class: "card-text btn btn-dark"%></span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card-group mt-1">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">¿Eres una Organización?</h5>
+            <p class="card-text">Si buscas dar a conocer una noticias, crear una pauta y convocar a muchos comunicadores, entonces ingresa o regìstrate acá.</p>
+            <span class="card-text btn btn-success"> Ingresa</span>
+            <span class="card-text btn btn-dark"> Regístarte</span>
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>

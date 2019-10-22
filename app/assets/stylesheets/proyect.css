@@ -16,3 +16,14 @@ th.celda {
 		max-height: 150px !important;
 	  overflow-y: auto !important;
 	}
+
+  .navbar {
+   min-height: 80px;
+ }
+
+/* .back_home {
+    background-image: url("conferencia.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+  } */
