@@ -3,6 +3,11 @@
   margin: auto;
 }
 
+
+.sombra_box {
+  box-shadow: 2px 2px 5px #999;
+}
+
 th.celda {
   width: 25%;
 }
