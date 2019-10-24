@@ -1,5 +1,9 @@
 class Users::ProfilesController < ApplicationController
 
+  def index
+    @press_conferences = PressConference.all
+
+  end
 
   def show
     @profile = current_user.profile
