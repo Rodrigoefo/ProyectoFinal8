@@ -20,11 +20,11 @@ class Organizators::PressConferencesController < ApplicationController
 
     def create
       @organizator = current_organizator
-      @press_conference = @organizator.press_conferences.create(press_conference_params)
+      @press_conference = @organizator.press_conferences.new(press_conference_params)
 
           respond_to do |format|
           if @press_conference.save
-            format.html { redirect_to organizators_press_conferences_path, notice: 'Student was successfully created.' }
+            format.html { redirect_to organizators_profile_show_path, notice: 'Student was successfully created.' }
           else
             format.html { render :new }
 
@@ -48,7 +48,7 @@ class Organizators::PressConferencesController < ApplicationController
       @press_conference = PressConference.find(params[:id])
       @press_conference.destroy
       respond_to do |format|
-          format.html { redirect_to organizators_press_conferences_path, notice: 'Student was successfully destroyed.' }
+          format.html { redirect_to organizators_profile_show_path, notice: 'Student was successfully destroyed.' }
 
       end
     end

@@ -52,7 +52,7 @@ class Organizators::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    organizators_profile_index_path
+    organizators_profile_show_path 
   end
 
   # The path used after sign up for inactive accounts.

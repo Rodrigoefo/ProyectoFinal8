@@ -5,13 +5,13 @@
   <div class="col-sm-12">
   <div class="field form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email"%>
+    <%= f.email_field :email, autofocus: true, class: "form-control  form-control-sm", autocomplete: "email"%>
 
   </div>
-
+ form-control-sm
   <div class="field form-group">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-sm" %>
   </div>
 
   <% if devise_mapping.rememberable? %>

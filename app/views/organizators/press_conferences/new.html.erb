@@ -1,4 +1,6 @@
-<p>New de Pautas</p>
+<h2>Crear una pauta</h2>
+
+
 
 <div class="container">
   <%= form_with(model: [:organizators, @press_conference], local: true) do |form| %>
@@ -41,7 +43,7 @@
 
     <div class="field">
       <%= form.label :status %>
-      <%= form.number_field :status %>
+      <%= form.select :status, PressConference.statuses.keys, {}, class: "custom-select custom-select-sm "%>
     </div>
 
     <div class="actions">
@@ -50,3 +52,5 @@
   <% end %>
 
 </div>
+<br>
+<p><%= link_to "Ver todas mis pautas", organizators_profile_show_path, class: "btn btn-warning"  %></p>
