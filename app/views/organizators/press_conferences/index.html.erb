@@ -1,37 +1,53 @@
-<p>Index de Pautas</p>
+<h2 class=" d-flex justify-content-center mb-5">Todas mis pautas</h2>
 
 <div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Address</th>
-        <th>Status</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+    <div class="row">
+        <div class="col-lg-2 col-sm-12">
+          <h3>Sobre el organizator</h3>
+          <p><%= link_to "Mi Perfil", organizators_profile_show_path, class: "btn  btn-sm btn-danger" %></p>
+          <p><%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-sm btn-secondary" %></p>
 
-    <tbody>
-      <% @press_conferences.each do |press_conference| %>
-        <tr>
-          <td><%= press_conference.title %></td>
-          <td><%= press_conference.description %></td>
-          <td><%= press_conference.date %></td>
-          <td><%= press_conference.time %></td>
-          <td><%= press_conference.address %></td>
-          <td><%= press_conference.status %></td>
-          <td><%= link_to 'Show', organizators_press_conference_path(press_conference), class: "btn btn-sm btn-warning"%></td>
-          <td><%= link_to 'Edit', edit_organizators_press_conference_path(press_conference), class: "btn btn-sm btn-success" %></td>
-          <td><%= link_to 'Destroy', organizators_press_conference_path(press_conference), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        </div>
 
-  <br>
 
-  <%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-secondary" %>
+        <div class="col-lg-10 col-sm-12">
+
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Título</th>
+
+              <th>fecha</th>
+              <th>Hora</th>
+              <th>Dónde</th>
+              <th>Estado Actual</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @press_conferences.each do |press_conference| %>
+              <tr>
+                <td><%= press_conference.title %></td>
+                <td><%= press_conference.date.strftime("%d %B %Y") %></td>
+                <td><%= press_conference.time.strftime("%H:%M") %></td>
+                <td><%= press_conference.address %></td>
+                <td><%= press_conference.status %></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <%= link_to 'Ver Pauta', organizators_press_conference_path(press_conference), class: "btn btn-sm btn-warning"%>
+                  <%= link_to 'Editar', edit_organizators_press_conference_path(press_conference), class: "btn btn-sm btn-success" %>
+                  <%= link_to 'Eiminar', organizators_press_conference_path(press_conference), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+
+                </td>
+              </tr>
+
+            <% end %>
+          </tbody>
+        </table>
+
+        </div>
+    </div>
+
 </div>

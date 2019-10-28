@@ -16,29 +16,29 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
+    <div class="field form-group">
+      <%= form.label :title, "Título" %>
+      <%= form.text_field :title, class: "form-control form-control-sm" %>
     </div>
 
-    <div class="field">
-      <%= form.label :description %>
-      <%= form.text_area :description %>
+    <div class="field form-group">
+      <%= form.label :description, "Detalle de la pauta" %>
+      <%= form.text_area :description, class: "form-control form-control-sm" %>
     </div>
 
-    <div class="field">
-      <%= form.label :date %>
-      <%= form.date_select :date %>
+    <div class="field form-group">
+      <%= form.label :date, "Fecha" %>
+      <%= form.date_select :date, class: "form-control" %>
     </div>
 
-    <div class="field">
-      <%= form.label :time %>
-      <%= form.time_select :time %>
+    <div class="field form-group">
+      <%= form.label :time, "Hora" %>
+      <%= form.time_select :time, class: "form-control form-control-sm" %>
     </div>
 
-    <div class="field">
-      <%= form.label :address %>
-      <%= form.text_field :address %>
+    <div class="field form-group">
+      <%= form.label :address, "Dirección" %>
+      <%= form.text_field :address, class: "form-control form-control-sm" %>
     </div>
 
     <div class="field">
@@ -53,4 +53,4 @@
 
 </div>
 <br>
-<p><%= link_to "Ver todas mis pautas", organizators_profile_show_path, class: "btn btn-warning"  %></p>
+<p><%= link_to "Ver todas mis pautas", organizators_press_conferences_path, class: "btn btn-warning"  %></p>

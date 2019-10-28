@@ -25,6 +25,6 @@ class Organizators::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   def after_sign_in_path_for(resource)
-    organizators_profile_show_path
+    organizators_press_conferences_path
   end
 end

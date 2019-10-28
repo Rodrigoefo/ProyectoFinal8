@@ -40,7 +40,9 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.select :status, PressConference.statuses.key, {} %>
+
+
   </div>
 
   <div class="actions">

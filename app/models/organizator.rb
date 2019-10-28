@@ -4,5 +4,5 @@ class Organizator < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :press_conferences
+  has_many :press_conferences, dependent: :destroy
 end

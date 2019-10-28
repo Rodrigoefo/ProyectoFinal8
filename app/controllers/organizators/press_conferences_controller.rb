@@ -1,11 +1,11 @@
 class Organizators::PressConferencesController < ApplicationController
 
   def index
-      @press_conferences = PressConference.all
+      @press_conferences = current_organizator.press_conferences
   end
 
     def show
-      @press_conference = PressConference.find(params[:id])
+      @press_conference = current_organizator.press_conferences.find(params[:id])
 
     end
 
@@ -15,43 +15,39 @@ class Organizators::PressConferencesController < ApplicationController
     end
 
     def edit
+      @press_conference = current_organizator.press_conferences.find(params[:id])
 
     end
 
     def create
-      @organizator = current_organizator
-      @press_conference = @organizator.press_conferences.new(press_conference_params)
 
-          respond_to do |format|
+      @press_conference = current_organizator.press_conferences.new(press_conference_params)
           if @press_conference.save
-            format.html { redirect_to organizators_profile_show_path, notice: 'Student was successfully created.' }
+             redirect_to organizators_press_conferences_path, notice: 'Student was successfully created.'
           else
-            format.html { render :new }
+             render :new
 
           end
-        end
     end
 
+
         def update
-          respond_to do |format|
+          @press_conference = current_organizator.press_conferences.new(press_conference_params)
             if @press_conference.update(press_conference_params)
-              format.html { redirect_to organizators_press_conferences_path, notice: 'Student was successfully updated.' }
+              redirect_to organizators_press_conferences_path, notice: 'Student was successfully updated.'
 
             else
-              format.html { render :edit }
+              render :edit
 
             end
-          end
         end
 
     def destroy
-      @press_conference = PressConference.find(params[:id])
-      @press_conference.destroy
-      respond_to do |format|
-          format.html { redirect_to organizators_profile_show_path, notice: 'Student was successfully destroyed.' }
-
-      end
+            @press_conference = current_organizator.press_conferences.find(params[:id])
+            @press_conference.destroy
+            redirect_to organizators_press_conferences_path, notice: 'Student was successfully destroyed.'
     end
+
 
     private
 
@@ -59,5 +55,4 @@ class Organizators::PressConferencesController < ApplicationController
    def press_conference_params
      params.require(:press_conference).permit(:title, :description, :date, :time, :address, :status)
    end
-
-end
+ end
