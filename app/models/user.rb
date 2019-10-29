@@ -8,8 +8,10 @@ class User < ApplicationRecord
 enum user_type: [:freelance, :influencer, :tradicional]
 
 has_one :profile, dependent: :destroy
-after_create :create_user_profile
+has_many :press_conferences, through: :solicituds
 
+
+after_create :create_user_profile
 
 accepts_nested_attributes_for :profile, update_only: true
 

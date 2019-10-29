@@ -7,6 +7,7 @@
           <p><%= link_to "Mi Perfil", organizators_profile_show_path, class: "btn  btn-sm btn-danger" %></p>
           <p><%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-sm btn-secondary" %></p>
 
+
         </div>
 
 
@@ -39,7 +40,7 @@
                   <%= link_to 'Ver Pauta', organizators_press_conference_path(press_conference), class: "btn btn-sm btn-warning"%>
                   <%= link_to 'Editar', edit_organizators_press_conference_path(press_conference), class: "btn btn-sm btn-success" %>
                   <%= link_to 'Eiminar', organizators_press_conference_path(press_conference), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
-
+                
                 </td>
               </tr>
 
