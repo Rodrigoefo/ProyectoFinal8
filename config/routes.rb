@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     namespace :users do
         get :timeline, to: 'timeline#index'
         resource :profile
+        resources :press_conferences, only: [:index, :show]
       end
 
 
