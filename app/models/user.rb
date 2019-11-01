@@ -8,6 +8,7 @@ class User < ApplicationRecord
 enum user_type: [:freelance, :influencer, :tradicional]
 
 has_one :profile, dependent: :destroy
+has_many :solicituds
 has_many :press_conferences, through: :solicituds
 
 

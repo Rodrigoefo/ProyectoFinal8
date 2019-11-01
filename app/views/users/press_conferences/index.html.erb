@@ -22,7 +22,7 @@
     <td><%= press_conference.time.strftime("%H:%M") %></td>
     <td><%= press_conference.address %></td>
     <td><%= press_conference.organizator.name %></td>
-    <td><%= press_conference.postulacion %></td>
+    <td><%= link_to "Postular", users_press_conferences_path, remote: true, class: "btn btn-success btn-width"  %></td>
 
 
   </tr>

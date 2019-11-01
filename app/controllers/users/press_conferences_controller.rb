@@ -9,6 +9,7 @@ class Users::PressConferencesController < ApplicationController
       @press_conference = PressConference.find(params[:id])
   end
 
+
   # def update
   #   @press_conference = PressConference.new(press_conference_params)
   #       if @press_conference.update(press_conference_params)
