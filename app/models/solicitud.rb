@@ -4,4 +4,7 @@ class Solicitud < ApplicationRecord
 
   enum status: [:in_progress, :accepted, :rejected]
 
+
+
+
 end

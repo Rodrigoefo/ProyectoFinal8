@@ -5,7 +5,9 @@ class PressConference < ApplicationRecord
 
   enum status: [:publicada, :cerrada, :borrador]
 
-
+  def has_solicitud (user)
+    solicituds.exists?(user: user)
+  end
 
 
 end

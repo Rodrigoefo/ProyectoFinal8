@@ -8,6 +8,9 @@ gem 'carrierwave'
 gem 'rails', '~> 5.2.3'
 gem 'trix'
 
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
+
 gem 'devise'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'

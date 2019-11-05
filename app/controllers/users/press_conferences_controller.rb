@@ -10,24 +10,20 @@ class Users::PressConferencesController < ApplicationController
   end
 
 
-  # def update
-  #   @press_conference = PressConference.new(press_conference_params)
-  #       if @press_conference.update(press_conference_params)
-  #         @press_conference.toggle(:postulacion)
-  #         redirect_to users_press_conferences_path
-  #
-  #       else
-  #         render :edit
-  #
-  #       end
-  #   end
-  #
-  #   private
-  #
-  #   def press_conference_params
-  #      params.require(:press_conference).permit(:title, :description, :date, :time, :address, :postulacion)
-  #
-  #   end
+  def solicitar
+    @press_conference = PressConference.find(params[:id])
+    @press_conference.solicituds.find_or_create_by!(user: current_user)
+    redirect_to users_press_conferences_path, notice: "Solicitud Realizada"
+
+  end
+
+  def destroy
+    @solicitud = Solicitud.find(params[:id])
+    @solicitud.destroy
+    redirect_to users_timeline_path
+
+  end
+
 
 
 end

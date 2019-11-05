@@ -1,8 +1,7 @@
 class Users::TimelineController < ApplicationController
 
   def index
-    @user = current_user
-    @press_conferences = PressConference.where(status: "publicada")
-
+    @solicitudes = current_user.solicituds
   end
+  
 end
