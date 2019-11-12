@@ -29,6 +29,7 @@ Rails.application.routes.draw do
         get 'profile/edit'
 
         resources :press_conferences
+        resources :users, only: :show
 
       end
 

@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-sm-3">
+    <% if @user.profile.photo_url %>
+    <p><%= image_tag @user.profile.photo_url, class: "avatar", size: "185x185" %></p>
+    <% end %>
+    <h3><%= @user.name %> <%= @user.lastname%></h3>
+
+    <%= link_to "Regresar a pautas", organizators_press_conferences_path, class: "btn btn-secondary" %>
+
+  </div>
+
+  <div class="col-sm-9">
+    <table class="table table-sm"
+      <tbody>
+        <tr class="thead-light">
+          <th class="celda bg-warning"> Email</th>
+            <td > <%= @user.email %></td>
+        </tr>
+
+        <tr class="thead-light">
+          <th class="celda"> Teléfono</th>
+            <td> <%= @user.profile.phone %></td>
+        </tr>
+
+        <% if @user.influencer?%>
+        <tr class="thead-light">
+          <th class="celda"> Red Social</th>
+            <td> <%= @user.profile.social_network %></td>
+          </tr>
+        <tr class="thead-light">
+          <th class="celda"> Dirección Red Social</th>
+            <td> <a href="<%=@user.profile.social_network_url %>" target="_blank"><%=@user.profile.social_network_url %></a></td>
+        </tr>
+        <%end%>
+
+        <%if @user.tradicional? %>
+        <tr class="thead-light">
+          <th class="celda"> Medio donde trabaja</th>
+            <td> <%= @user.profile.media_name %></td>
+        </tr>
+        <%end %>
+
+
+      </tbody>
+    </table>
+    <div class="row text-justify">
+      <div class="col-sm-10">
+      <p><%= sanitize @user.profile.description %></p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

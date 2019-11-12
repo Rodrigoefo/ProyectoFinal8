@@ -1,1 +1,53 @@
 <p>Show de Pautas</p>
+<%= @press_conference.title %>
+
+    <table class="table table-striped">
+    <thead class="bg-danger">
+    <tr>
+      <td>Id</td>
+      <th>Nombre Solicitante</th>
+      <th>Email Solicitante</th>
+      <th>Solicitud realiza el</th>
+      <th>Status</th>
+
+
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @solicitudes.each do |solicitud| %>
+      <tr>
+        <td><%= solicitud.id %></td>
+        <td><%= solicitud.user.name %></td>
+        <td><%= solicitud.user.email %></td>
+        <td><%= solicitud.created_at %></td>
+        <td><%= solicitud.status %></td>
+        <td><%= link_to "detalles", organizators_user_path(solicitud.user) %></td>
+        <td><%= solicitud.status_disponibles %></td>
+
+        <td>
+
+
+          <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= solicitud.status %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <% solicitud.status_disponibles.each do |new_status| %>
+                  <%= link_to new_status, "#", class: "dropdown-item" %>
+                <% end %>
+              </div>
+            </div>
+
+
+
+        </td>
+
+
+
+      </tr>
+    <% end %>
+    </tbody>
+    </table>
+    <%= link_to "Volver a Pautas", organizators_press_conferences_path, class: "btn btn-dark" %>

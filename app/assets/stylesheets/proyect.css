@@ -1,16 +1,25 @@
+body {
+  font-size: 14px;
+}
+
+
+
 .form_layout {
   width: 50%;
   margin: auto;
 }
 
-.tableSize {
+/* .tableSize {
   font-size: 14px;
 
-}
-
+} */
 
 .sombra_box {
   box-shadow: 2px 2px 5px #999;
+}
+
+thead {
+  color: white;
 }
 
 th.celda {
@@ -36,9 +45,12 @@ th.celda {
    border-color: #cccccc;
  }
 
-/* .back_home {
-    background-image: url("conferencia.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 300px;
-  } */
+ i.fa-trash-alt {
+   color: red;
+ }
+ i.fa-edit {
+   color: green;
+ }
+ i.fa-eye {
+   color: gray;
+ }

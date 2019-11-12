@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container-fluid">
   <h4>Todas las pautas públicas</h4>
-<table class="table table-responsive table-striped">
-<thead class="bg-secondary">
+<table class="table table-striped">
+<thead class="bg-danger">
 <tr>
   <th>Título</th>
   <th>Fecha</th>
   <th>Hora</th>
   <th>Dónde</th>
   <th>Organizador</th>
+  <th> </th>
 
 
   <th colspan="3"></th>
@@ -22,12 +23,19 @@
     <td><%= press_conference.time.strftime("%H:%M") %></td>
     <td><%= press_conference.address %></td>
     <td><%= press_conference.organizator.name %></td>
+    <td><%= link_to  users_press_conference_path(press_conference) do %>
+      <i class="fas fa-lg fa-eye"></i></
+      <%end  %>
+    </td>
+
+      <td>
 
     <% if press_conference.has_solicitud(current_user)%>
           <td>Ya postulaste</td>
       <% else %>
-    <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-success btn-width"  %></td>
+    <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-secondary btn-sm"  %></td>
     <%end  %>
+
 
 
   </tr>
