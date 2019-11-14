@@ -1,5 +1,6 @@
 class Organizators::SolicitudesController < ApplicationController
 
+
   def update
     # Solicitud.where(organizator_id: current_organizator.id, id: params[:id])
     @solicitud = current_organizator.solicituds.find(params[:id])
@@ -12,7 +13,7 @@ class Organizators::SolicitudesController < ApplicationController
         end
         else
         format.js do
-        
+
         end
       end
     end

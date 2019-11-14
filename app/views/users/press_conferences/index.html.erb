@@ -1,5 +1,7 @@
 <div class="container-fluid">
   <h4>Todas las pautas públicas</h4>
+
+
 <table class="table table-striped">
 <thead class="bg-danger">
 <tr>
@@ -42,5 +44,7 @@
 <% end %>
 </tbody>
 </table>
-<p><%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-danger" %></p>
+<span class="float-right"><%= paginate @press_conferences%></span>
+
+<%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-danger" %>
 </div>

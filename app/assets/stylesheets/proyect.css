@@ -54,3 +54,35 @@ th.celda {
  i.fa-eye {
    color: gray;
  }
+
+
+ /*  Pagination styles*/
+
+ .pagination > li > a
+ {
+     background-color: white;
+     color: #343a40;
+ }
+
+ .pagination > li > a:focus,
+ .pagination > li > a:hover,
+ .pagination > li > span:focus,
+ .pagination > li > span:hover
+ {
+     color: #343a40;
+     background-color: #eee;
+     border-color: #ddd;
+ }
+
+ .pagination > .active > a
+ {
+     color: white;
+     background-color: #6c757d !Important;
+     border: solid 1px #6c757d !Important;
+ }
+
+ .pagination > .active > a:hover
+ {
+     background-color: #6c757d !Important;
+     border: solid 1px #6c757d;
+ }
