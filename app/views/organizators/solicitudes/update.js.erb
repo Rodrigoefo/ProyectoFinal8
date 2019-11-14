@@ -1,0 +1,10 @@
+$("#changeStatus-<%= @solicitud.id %>").html("
+<button class="btn btn-secondary dropdown-toggle" type="button" id="changeStatus-<%= @solicitud.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <%= @solicitud.status %>
+</button>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <% @solicitud.status_disponibles.each do |new_status| %>
+    <%= link_to new_status, organizators_solicitude_path(@solicitud, status: new_status), method: :put, class: "dropdown-item", remote: true %>
+  <% end %>
+</div>
+  ");

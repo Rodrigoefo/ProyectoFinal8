@@ -6,7 +6,8 @@ class Organizators::PressConferencesController < ApplicationController
 
     def show
       @press_conference = current_organizator.press_conferences.find(params[:id])
-      @solicitudes = @press_conference.solicituds
+      @solicitudes = @press_conference.solicituds.includes(:user).order("created_at")
+  
 
     end
 
@@ -33,7 +34,7 @@ class Organizators::PressConferencesController < ApplicationController
 
 
         def update
-          @press_conference = current_organizator.press_conferences.new(press_conference_params)
+          @press_conference = current_organizator.press_conferences.find(params[:id])
             if @press_conference.update(press_conference_params)
               redirect_to organizators_press_conferences_path, notice: 'Student was successfully updated.'
 

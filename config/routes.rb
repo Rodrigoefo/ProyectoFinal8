@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
         resources :press_conferences
         resources :users, only: :show
+        resources :solicitudes, only: [:update, :show]
 
       end
 

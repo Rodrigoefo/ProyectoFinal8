@@ -27,25 +27,10 @@
         <td><%= solicitud.status_disponibles %></td>
 
         <td>
-
-
-          <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= solicitud.status %>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <% solicitud.status_disponibles.each do |new_status| %>
-                  <%= link_to new_status, "#", class: "dropdown-item" %>
-                <% end %>
-              </div>
-            </div>
-
-
-
+          <div id="dropdown-<%= solicitud.id %>">
+               <%= render partial: "dropdown", locals: { solicitud: solicitud } %>
+             </div>
         </td>
-
-
-
       </tr>
     <% end %>
     </tbody>

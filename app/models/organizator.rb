@@ -5,4 +5,5 @@ class Organizator < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :press_conferences, dependent: :destroy
+  has_many :solicituds, through: :press_conferences
 end
