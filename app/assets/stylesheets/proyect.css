@@ -2,17 +2,17 @@ body {
   font-size: 14px;
 }
 
-
-
 .form_layout {
   width: 50%;
   margin: auto;
+  background-color: #dbdbdb;
+  padding: 10px;
+  font-weight: bold;
+  -webkit-box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
+  -moz-box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
+  box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
 }
 
-/* .tableSize {
-  font-size: 14px;
-
-} */
 
 .sombra_box {
   box-shadow: 2px 2px 5px #999;

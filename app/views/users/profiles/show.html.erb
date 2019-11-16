@@ -1,19 +1,19 @@
 <div class="row">
-  <div class="col-sm-3">
+  <div class="col-lg-2 col-md-4 p-2">
     <% if current_user.profile.photo_url %>
     <p><%= image_tag @profile.photo_url, class: "avatar", size: "185x185" %></p>
     <% end %>
-    <h3><%= current_user.name %> <%= current_user.lastname%></h3>
+    <h5><%= current_user.name %> <%= current_user.lastname%></h5>
 
-    <%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-secondary" %>
+    <%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-dark btn-block btn-sm" %>
 
   </div>
 
-  <div class="col-sm-9">
-    <table class="table table-sm"
+  <div class="col-lg-10 col-md-8">
+    <table class="table table-sm">
       <tbody>
         <tr class="thead-light">
-          <th class="celda bg-warning"> Email</th>
+          <th class="celda bg-dark"> Email</th>
             <td > <%= current_user.email %></td>
         </tr>
 

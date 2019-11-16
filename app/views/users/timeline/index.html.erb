@@ -2,15 +2,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-2 col-md-4 p-2">
+
       <% if current_user.profile.photo_url %>
       <p><%= image_tag current_user.profile.photo_url, class: "avatar", size: "185x185" %></p>
       <% end %>
-      <h4><%= current_user.name %> <%= current_user.lastname %></h4>
-      <p><i><%= current_user.email %></i></p>
+      <h5><%= current_user.name %> <%= current_user.lastname %></h5>
+      <p><%= current_user.email %></p>
 
-      <%= link_to "Ver Perfil", users_profile_path, class: "btn btn-dark mt-1 btn-sm" %>
-      <%= link_to "Editar Perfil" , edit_users_profile_path, class: "btn btn-dark mt-1 btn-sm"%>
-      <%= link_to "Ver Totas las Pautas" , users_press_conferences_path, "data-turbolinks": false, class: "btn btn-danger mt-1 btn-sm" %>
+      <%= link_to "Ver Perfil", users_profile_path, class: "btn btn-dark mt-1 btn-sm btn-block" %>
+      <%= link_to "Editar Perfil" , edit_users_profile_path, class: "btn btn-dark mt-1 btn-sm btn-block"%>
+      <%= link_to "Ver Totas las Pautas" , users_press_conferences_path, "data-turbolinks": false, class: "btn btn-danger mt-1 btn-sm btn-block" %>
 
 
 
@@ -55,12 +56,9 @@
               </tr>
             <% end %>
           <% end %>
-
             </tbody>
-
-
-
         </table>
+
 
 <!--Tabla de Postulaciones  -->
         <h5>Postulaciones <strong>en progreso</strong></h5>
@@ -100,6 +98,7 @@
       <%end %>
       </tbody>
       </table>
+  
 
       </div>
 

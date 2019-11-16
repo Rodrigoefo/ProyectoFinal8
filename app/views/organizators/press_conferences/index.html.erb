@@ -1,19 +1,15 @@
-<h4 class=" d-flex justify-content-center mb-5">Todas mis pautas</h4>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-2 col-sm-12">
-          <h3>Sobre el organizator</h3>
-          <p><%= link_to "Mi Perfil", organizators_profile_show_path, class: "btn  btn-sm btn-danger" %></p>
-          <p><%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-sm btn-secondary" %></p>
 
-
+        <%= link_to "Mi Perfil", organizators_profile_show_path, class: "btn  btn-sm btn-danger btn-block" %>
+        <%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-sm btn-secondary btn-block" %>
         </div>
-
-
         <div class="col-xl-10 col-sm-12">
 
       <!-- <div class="table-responsive"> -->
+      <h4>Todas mis pautas</h4>
         <table class="table table-striped">
           <thead class="bg-danger">
             <tr>

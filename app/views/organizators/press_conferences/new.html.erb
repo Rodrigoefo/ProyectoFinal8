@@ -2,7 +2,7 @@
 
 
 
-<div class="container">
+<div class="container-fluid form_layout">
   <%= form_with(model: [:organizators, @press_conference], local: true) do |form| %>
     <% if @press_conference.errors.any? %>
       <div id="error_explanation">
@@ -47,10 +47,10 @@
     </div>
 
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit "Crear Pauta", class: "btn btn-dark mt-2" %>
     </div>
   <% end %>
 
 </div>
 <br>
-<p><%= link_to "Ver todas mis pautas", organizators_press_conferences_path, class: "btn btn-warning"  %></p>
+<p class="form_layout"><%= link_to "Volver a mis pautas", organizators_press_conferences_path, class: "btn btn-danger"  %></p>
