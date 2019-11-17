@@ -1,6 +1,5 @@
-<p>Show de Pautas</p>
-<%= @press_conference.title %>
 
+<h5>¿Quienes han postulado a la pauta: <strong><%= @press_conference.title %></strong>?</h5>
     <table class="table table-striped">
     <thead class="bg-danger">
     <tr>
@@ -8,7 +7,7 @@
       <th>Nombre Solicitante</th>
       <th>Email Solicitante</th>
       <th>Solicitud realiza el</th>
-      <th>Status</th>
+      <th>Sobre el postulante</th>
 
 
       <th colspan="3"></th>
@@ -19,12 +18,14 @@
     <% @solicitudes.each do |solicitud| %>
       <tr>
         <td><%= solicitud.id %></td>
-        <td><%= solicitud.user.name %></td>
+        <td><%= solicitud.user.name %> <%= solicitud.user.lastname %></td>
         <td><%= solicitud.user.email %></td>
-        <td><%= solicitud.created_at %></td>
-        <td><%= solicitud.status %></td>
-        <td><%= link_to "detalles", organizators_user_path(solicitud.user) %></td>
-        <td><%= solicitud.status_disponibles %></td>
+        <td><%= solicitud.created_at.strftime("%d %B %Y") %></td>
+        <td><%= link_to organizators_user_path(solicitud.user) do %>
+          <i class="fas fa-lg fa-user"></i>
+          <% end %>
+        </td>
+        <!-- <td><%= solicitud.status_disponibles %></td> -->
 
         <td>
           <div id="dropdown-<%= solicitud.id %>">

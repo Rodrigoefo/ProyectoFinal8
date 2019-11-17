@@ -1,50 +1,67 @@
-<div class="container form_layout ">
-  <h2>Regístrate</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form_layout"}) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :name, "Nombre de la Organización" %><br />
-      <%= f.text_field :name, autocomplete: "name" %>
+    <div class="field-group">
+      <div class="control-label">
+        <%= f.label :name, "Nombre de la Organización" %><br />
+        <%= f.text_field :name, autocomplete: "name", class: "form-control form-control-sm " %>
+      </div>
+
     </div>
-    <div class="field">
+    <div class="field-group">
+      <div class="control-label">
       <%= f.label :description, "Descripción de la Organización" %><br />
-      <%= f.text_area :description, autocomplete: "description" %>
+      <%= f.text_area :description,  class: "form-control form-control-sm " %>
     </div>
-    <div class="field">
+    </div>
+    <div class="field-group">
+      <div class="control-label">
       <%= f.label :address, "Dirección de la Organización" %><br />
-      <%= f.text_field :address, autocomplete: "address" %>
+      <%= f.text_field :address, class: "form-control form-control-sm " %>
+    </div>
     </div>
 
-    <div class="field">
-      <%= f.label :phone, "Teléfono" %><br />
-      <%= f.text_field :phone, autocomplete: "phone" %>
+    <div class="row">
+      <div class="col">
+        <div class="field-group">
+          <div class="control-label">
+          <%= f.label :phone, "Teléfono" %><br />
+          <%= f.text_field :phone,  class: "form-control form-control-sm "%>
+        </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="field-group">
+          <div class="control-label">
+          <%= f.label :email %><br />
+          <%= f.email_field :email,  class: "form-control form-control-sm " %>
+        </div>
+        </div>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
+    <div class="field-group">
+      <div class="control-label">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, class: "form-control form-control-sm "%>
+    </div>
     </div>
 
-    <div class="field">
+    <div class="field-group">
+      <div class="control-label">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, class: "form-control form-control-sm " %>
     </div>
+    </div>
+    <br>
 
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Registrarse", class: "btn btn-success" %>
     </div>
+
+      <%= render "organizators/shared/links" %>
   <% end %>
-
-  <%= render "organizators/shared/links" %>
-
-</div>

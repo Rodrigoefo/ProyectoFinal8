@@ -7,11 +7,13 @@ body {
   margin: auto;
   background-color: #dbdbdb;
   padding: 10px;
+  border-radius: 4px;
   font-weight: bold;
   -webkit-box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
   -moz-box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
   box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
 }
+
 
 
 .sombra_box {
@@ -53,6 +55,10 @@ th.celda {
  }
  i.fa-eye {
    color: gray;
+ }
+ i.fa-user {
+   color: gray;
+   margin:auto;
  }
 
 
