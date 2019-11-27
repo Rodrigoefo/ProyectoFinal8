@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_153403) do
+ActiveRecord::Schema.define(version: 2019_11_20_030911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_10_29_153403) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "postulacion", default: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["organizator_id"], name: "index_press_conferences_on_organizator_id"
   end
 

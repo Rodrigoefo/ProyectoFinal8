@@ -5,6 +5,10 @@ class PressConference < ApplicationRecord
 
   enum status: [:publicada, :cerrada, :borrador]
 
+  geocoded_by :address
+  after_validation :geocode
+
+
   def has_solicitud (user)
     solicituds.exists?(user: user)
   end

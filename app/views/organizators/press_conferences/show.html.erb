@@ -21,7 +21,7 @@
         <td><%= solicitud.user.name %> <%= solicitud.user.lastname %></td>
         <td><%= solicitud.user.email %></td>
         <td><%= solicitud.created_at.strftime("%d %B %Y") %></td>
-        <td><%= link_to organizators_user_path(solicitud.user) do %>
+        <td><%= link_to organizators_user_path(solicitud.user, press_conference_id: solicitud.press_conference.id) do %>
           <i class="fas fa-lg fa-user"></i>
           <% end %>
         </td>

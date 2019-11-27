@@ -6,7 +6,7 @@
     <h4><%= @user.name %> <%= @user.lastname%></h4>
     <br>
 
-    <%= link_to "Regresar a solicitudes", organizators_press_conferences_path, class: "btn btn-dark btn-block btn-sm" %>
+    <%= link_to "Regresar a la solicitud:  #{@press_conference.title}", organizators_press_conference_path(@press_conference), class: "btn btn-dark btn-block btn-sm" %>
     <%= link_to "Regresar a pautas", organizators_press_conferences_path, class: "btn btn-dark btn-block btn-sm" %>
 
   </div>

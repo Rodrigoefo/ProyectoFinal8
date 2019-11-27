@@ -7,7 +7,7 @@ class Organizators::PressConferencesController < ApplicationController
     def show
       @press_conference = current_organizator.press_conferences.find(params[:id])
       @solicitudes = @press_conference.solicituds.includes(:user).order("created_at")
-  
+
 
     end
 
