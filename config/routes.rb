@@ -20,6 +20,7 @@ Rails.application.routes.draw do
           get :solicitar, on: :member
 
         end
+        
       end
 
 
