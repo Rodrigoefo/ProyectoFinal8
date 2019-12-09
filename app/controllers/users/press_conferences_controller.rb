@@ -9,6 +9,19 @@ class Users::PressConferencesController < ApplicationController
       @press_conference = PressConference.find(params[:id])
   end
 
+  def follow
+  @press_conference = PressConference.find(params[:id])
+  current_user.follows.create(organizator: @press_conference.organizator)
+  redirect_to users_press_conference_path(@press_conference)
+end
+
+def unfollow
+  @press_conference = PressConference.find(params[:id])
+  follow = current_user.follows.find_by(organizator: @press_conference.organizator)
+  follow.try(:destroy)
+  redirect_to users_press_conference_path(@press_conference)
+end
+
 
   def solicitar
     @press_conference = PressConference.find(params[:id])

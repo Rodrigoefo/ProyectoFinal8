@@ -10,6 +10,7 @@ enum user_type: [:freelance, :influencer, :tradicional]
 has_one :profile, dependent: :destroy
 has_many :solicituds
 has_many :press_conferences, through: :solicituds
+has_many :follows
 
 
 after_create :create_user_profile
