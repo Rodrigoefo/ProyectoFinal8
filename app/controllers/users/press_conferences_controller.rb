@@ -7,6 +7,10 @@ class Users::PressConferencesController < ApplicationController
 
   def show
       @press_conference = PressConference.find(params[:id])
+      @hash =Gmaps4rails.build_markers(@press_conference) do | press_conference, marker|
+        marker.lat press_conference.latitude
+        marker.lng press_conference.longitude
+    end
   end
 
   def follow
