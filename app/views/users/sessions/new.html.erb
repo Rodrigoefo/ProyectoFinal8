@@ -2,8 +2,6 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form_layout"}) do |f| %>
 
-
-
   <div class="row">
     <div class="col-sm-12">
     <div class="field form-group">
@@ -25,7 +23,7 @@
     <% end %>
 
     <div class="actions form-group">
-      <%= f.submit "Iniciar Sesión", class: "btn btn-danger" %>
+      <%= f.submit "Iniciar sesión", class: "btn btn-primary btn-sm" %>
     </div>
   <% end %>
 

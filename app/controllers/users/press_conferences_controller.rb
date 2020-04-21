@@ -10,22 +10,22 @@ class Users::PressConferencesController < ApplicationController
   end
 
   def follow
-  @press_conference = PressConference.find(params[:id])
-  current_user.follows.create(organizator: @press_conference.organizator)
+  @press_conference = PressConference.find(params[:id]) #Traigo al organizator de la PressConference
+  current_user.follows.create(organizator: @press_conference.organizator) #Le asigno a los follows del currente_user el organizator de la PressConference
   redirect_to users_press_conference_path(@press_conference)
 end
 
 def unfollow
   @press_conference = PressConference.find(params[:id])
   follow = current_user.follows.find_by(organizator: @press_conference.organizator)
-  follow.try(:destroy)
+  follow.try(:destroy) #try invoca un método identificado por el símbolo y, si el receptor no responde al método, en lugar de romper la ejecucion del cíodigo y levantar un error, retorna un nil.
   redirect_to users_press_conference_path(@press_conference)
 end
 
 
   def solicitar
     @press_conference = PressConference.find(params[:id])
-    @press_conference.solicituds.find_or_create_by!(user: current_user)
+    @press_conference.solicituds.find_or_create_by!(user: current_user) # Finds the first record with the given attributes, or creates a record with the attributes if one is not found
     redirect_to users_press_conferences_path, notice: "Solicitud Realizada"
 
   end

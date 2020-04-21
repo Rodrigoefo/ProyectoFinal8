@@ -5,15 +5,14 @@ body {
 .form_layout {
   width: 50%;
   margin: auto;
-  background-color: #dbdbdb;
   padding: 10px;
+  border: 1px solid #bdbcbb;
   border-radius: 4px;
-  font-weight: bold;
-  -webkit-box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
-  -moz-box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
-  box-shadow: -11px -8px 5px -9px rgba(0,0,0,0.72);
 }
 
+.backSigIn{
+  
+}
 
 
 .sombra_box {

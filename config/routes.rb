@@ -12,7 +12,6 @@ Rails.application.routes.draw do
          registrations: 'organizators/registrations'
        }
 
-
        namespace :users do
             get :timeline, to: 'timeline#index'
             resource :profile

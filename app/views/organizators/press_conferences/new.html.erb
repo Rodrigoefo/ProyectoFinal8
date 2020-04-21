@@ -45,12 +45,10 @@
       <%= form.label :status %>
       <%= form.select :status, PressConference.statuses.keys, {}, class: "custom-select custom-select-sm "%>
     </div>
+    <br>
 
     <div class="actions">
-      <%= form.submit "Crear Pauta", class: "btn btn-dark mt-2" %>
+      <%= form.submit "Crear Pauta", class: "btn btn-dark btn-sm" %>  <%= link_to "Volver a mis pautas", organizators_press_conferences_path, class: "btn btn-primary btn-sm mr-auto" %>
     </div>
   <% end %>
-
 </div>
-<br>
-<p class="form_layout"><%= link_to "Volver a mis pautas", organizators_press_conferences_path, class: "btn btn-danger"  %></p>

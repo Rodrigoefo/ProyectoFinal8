@@ -11,7 +11,7 @@ class Organizators::SolicitudesController < ApplicationController
        format.js do
        end
      end
-     # render plain: "Hola Rodrigo
+    
      # render template: "update.js.erb", locals: { solicitud: @solicitud }
    end
 

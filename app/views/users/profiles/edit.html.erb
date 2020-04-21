@@ -10,9 +10,8 @@
     <p><%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-dark btn-sm btn-block" %></p>
 
   </div>
-
+<!--current_user es el objeto actual que está siendo editado. Al tener un ID, el formulario infiere que el método es POST y no GET -->
   <div class="col-lg-10 col-md-8">
-
     <%= form_for current_user, url: users_profile_path do |form| %>
       <% if current_user.errors.any? %>
           <% current_user.errors.full_messages.each do |msg| %>
@@ -37,7 +36,7 @@
           </div>
         </div>
       </div>
-
+<!--fields_for, al pasarle un modelo, permite añadir elementos de otro modelo en el formulario. El model de , en este caso de USER, debe declararse que se permite que PROFILE puede ser anidado  -->
       </div>
 
 
