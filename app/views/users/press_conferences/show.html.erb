@@ -27,6 +27,8 @@
         <div style='width: 800px;'>
           <div id="map" style='width: 600px; height: 300px;'></div>
         </div>
+        <br>
+        <br>
 
 
         <script type="text/javascript">
@@ -36,6 +38,7 @@
             markers = handler.addMarkers(<%=raw @hash.to_json %>);
             handler.bounds.extendWith(markers);
             handler.fitMapToBounds();
+            handler.getMap().setZoom(16)
           });
 
         </script>

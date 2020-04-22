@@ -10,8 +10,14 @@ body {
   border-radius: 4px;
 }
 
+.backSessionUser {
+  background-image: url(./Journalist.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
 .backSigIn{
-  
+
 }
 
 
