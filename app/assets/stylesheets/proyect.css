@@ -2,6 +2,7 @@ body {
   font-size: 14px;
 }
 
+
 .form_layout {
   width: 50%;
   margin: auto;
@@ -14,6 +15,11 @@ body {
   background-image: url(./Journalist.jpg);
   background-size: cover;
   height: 100vh;
+}
+
+.pbar{
+color: white;
+
 }
 
 .backSigIn{
@@ -67,6 +73,8 @@ th.celda {
  }
 
 
+
+
  /*  Pagination styles*/
 
  .pagination > li > a
@@ -97,3 +105,17 @@ th.celda {
      background-color: #6c757d !Important;
      border: solid 1px #6c757d;
  }
+
+
+ /* Media Queries */
+
+ @media (max-width: 600px) {
+     .form_layout {
+       width: 100%;
+       margin: auto;
+       padding: 10px;
+       border: 1px solid #bdbcbb;
+       border-radius: 4px;
+     }
+
+   }

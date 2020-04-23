@@ -3,6 +3,10 @@ class PressConference < ApplicationRecord
   has_many :solicituds
   has_many :users, through: :solicituds
 
+  validates :title, :description, :address , presence: true
+  validates_length_of :title, :maximum => 60
+
+
   enum status: [:publicada, :cerrada, :borrador]
 
   geocoded_by :address

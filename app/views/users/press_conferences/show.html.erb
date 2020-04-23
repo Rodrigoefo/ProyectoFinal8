@@ -12,7 +12,7 @@
     </div>
       <div class="col-lg-10 col-md-8">
         <h3><%= @press_conference.title %></h3>
-        <p><strong>Fecha y Hora : </strong><%= @press_conference.date.strftime("%d %B %Y") %>  <strong> - </strong>  <%= @press_conference.time.strftime("%H:%M") %> </p>
+        <p><strong>Fecha y Hora : </strong><%= @press_conference.date.strftime("%d/%m%Y") %>  <strong> - </strong>  <%= @press_conference.time.strftime("%H:%M") %> </p>
         <p><strong>Organiza : </strong><%= @press_conference.organizator.name %></p>
 
 

@@ -1,4 +1,5 @@
 class Organizators::PressConferencesController < ApplicationController
+    
 
   def index
       @press_conferences = current_organizator.press_conferences
@@ -26,7 +27,7 @@ class Organizators::PressConferencesController < ApplicationController
 
       @press_conference = current_organizator.press_conferences.new(press_conference_params)
           if @press_conference.save
-             redirect_to organizators_press_conferences_path, notice: 'Student was successfully created.'
+             redirect_to organizators_press_conferences_path
           else
              render :new
 
@@ -37,7 +38,7 @@ class Organizators::PressConferencesController < ApplicationController
         def update
           @press_conference = current_organizator.press_conferences.find(params[:id])
             if @press_conference.update(press_conference_params)
-              redirect_to organizators_press_conferences_path, notice: 'Student was successfully updated.'
+              redirect_to organizators_press_conferences_path
 
             else
               render :edit
@@ -48,13 +49,12 @@ class Organizators::PressConferencesController < ApplicationController
     def destroy
             @press_conference = current_organizator.press_conferences.find(params[:id])
             @press_conference.destroy
-            redirect_to organizators_press_conferences_path, notice: 'Student was successfully destroyed.'
+            redirect_to organizators_press_conferences_path
     end
 
 
     private
 
-    # Never trust parameters from the scary internet, only allow the white list through.
    def press_conference_params
      params.require(:press_conference).permit(:title, :description, :date, :time, :address, :status)
    end

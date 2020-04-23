@@ -2,16 +2,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-2 col-sm-12">
-
-        <%= link_to "Mi Perfil", organizators_profile_show_path, class: "btn  btn-sm btn-danger btn-block" %>
-        <%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-sm btn-secondary btn-block" %>
+          <h5>Panel de <%= current_organizator.name %></h5>
+        <%= link_to "Mi Perfil", organizators_profile_show_path, class: "btn  btn-sm btn-info btn-block" %>
+        <%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-sm btn-secondary btn-block mb-2" %>
         </div>
         <div class="col-xl-10 col-sm-12">
 
-      <!-- <div class="table-responsive"> -->
-      <h4>Todas mis pautas</h4>
+
+      <h5>Todas mis pautas</h5>
+      <div class="table-responsive-sm">
         <table class="table table-striped">
-          <thead class="bg-danger">
+          <thead class="bg-secondary">
             <tr>
               <th>Título</th>
 
@@ -29,7 +30,7 @@
             <% @press_conferences.each do |press_conference| %>
               <tr>
                 <td><%= press_conference.title %></td>
-                <td><%= press_conference.date.strftime("%d %B %Y") %></td>
+                <td><%= press_conference.date.strftime("%d/%m/%Y") %></td>
                 <td><%= press_conference.time.strftime("%H:%M") %></td>
                 <td><%= press_conference.address %></td>
                 <td><%= press_conference.status %></td>
@@ -53,7 +54,7 @@
             <% end %>
           </tbody>
         </table>
-      <!-- </div> -->
+      </div>
         </div>
     </div>
 
