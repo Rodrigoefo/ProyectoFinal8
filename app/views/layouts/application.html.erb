@@ -20,7 +20,11 @@
     <%= render 'layouts/navbar', layout: false%>
 
     <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>">
+    <% if key == "notice"  %>
+    <div class="alert alert-success">
+      <%else  %>
+      <div class="alert alert-danger">
+    <% end  %>
        <%= value %>
     </div>
   <% end %>

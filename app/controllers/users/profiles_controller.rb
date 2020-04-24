@@ -17,7 +17,7 @@ class Users::ProfilesController < ApplicationController
     @profile=current_user.profile
     respond_to do |format|
       if current_user.update(user_params)
-        format.html { redirect_to users_profile_path, notice: 'Tu perfil se ha actualizado' }
+        format.html { redirect_to users_timeline_path, notice: 'Tu perfil se ha actualizado' }
       else
         format.html { render :edit }
       end

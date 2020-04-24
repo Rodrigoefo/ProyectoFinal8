@@ -5,7 +5,7 @@
   <div class="col">
     <div class="form-group">
       <div class="control-label ">
-        <%= f.label :name, "Nombre" %>
+        <%= f.label :name, "Nombres" %>
         <%= f.text_field :name, autofocus: true , class: "form-control form-control-sm " %>
       </div>
     </div>
@@ -33,7 +33,12 @@
       <%= f.label :email %>
     </div>
     <div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id=""><i class="far fa-lg fa-envelope"></i></span>
+        </div>
       <%= f.email_field :email, class: "form-control form-control-sm" %>
+      </div>
     </div>
   </div>
 
@@ -51,11 +56,15 @@
       <%= f.label :password %>
     </div>
     <div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id=""><i class="fas fa-lg fa-key"></i></span>
+        </div>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-sm" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-sm", placeholder: "6 caractéres mínimo" %>
 
+      </div>
     </div>
   </div>
   <div class="form-group">
@@ -63,7 +72,12 @@
       <%= f.label :password_confirmation %><br />
     </div>
     <div>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-sm" %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id=""><i class="fas fa-lg fa-key"></i></span>
+        </div>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-sm", placeholder: "Repite tu contraseña" %>
+      </div>
     </div>
 
   </div>

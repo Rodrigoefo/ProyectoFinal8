@@ -31,10 +31,15 @@
 
         <td>
 
+
       <% if press_conference.has_solicitud(current_user)%>
             <td>Ya postulaste</td>
         <% else %>
-      <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-outline-secondary btn-sm"  %></td>
+        <% if current_user.profile.is_completed  %>
+            <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-outline-secondary btn-sm"  %></td>
+        <%else  %>
+          <td>Debes llenar tu perfil primero</td>
+        <%end  %>
       <%end  %>
 
 

@@ -15,7 +15,7 @@
     <%= form_for current_user, url: users_profile_path do |form| %>
       <% if current_user.errors.any? %>
           <% current_user.errors.full_messages.each do |msg| %>
-          <%= msg %>
+          <%= msg %><br>
           <% end %>
       <% end %>
 
@@ -46,6 +46,9 @@
       <div class="control-label">
         <%= profile_form.label :photo, "Sube una foto"%>
         <%= profile_form.file_field :photo%>
+        <div class="valid-feedback">
+        Looks good!
+      </div>
 
       </div>
     </div>

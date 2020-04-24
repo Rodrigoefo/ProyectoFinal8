@@ -2,6 +2,25 @@ body {
   font-size: 14px;
 }
 
+#estilomapa{
+  width: 610px;
+}
+
+.maxalto1{
+height: 60vh;
+background-image: url("noticias2.jpeg");
+background-size: contain;
+background-repeat: no-repeat;
+float: right;
+background-position: center;
+
+}
+
+
+.maxalto2{
+padding-top: 5%;
+
+}
 
 .form_layout {
   width: 50%;
@@ -10,6 +29,7 @@ body {
   border: 1px solid #bdbcbb;
   border-radius: 4px;
 }
+
 
 .backSessionUser {
   background-image: url(./Journalist.jpg);
@@ -109,13 +129,28 @@ th.celda {
 
  /* Media Queries */
 
- @media (max-width: 600px) {
+ @media (max-width: 767px) {
      .form_layout {
        width: 100%;
        margin: auto;
        padding: 10px;
        border: 1px solid #bdbcbb;
        border-radius: 4px;
+     }
+
+     #estilomapa{
+       width: 100%!important;
+     }
+
+     .maxalto1{
+     height: 0;
+     width: 100%;
+
+     }
+
+     .maxalto2{
+     padding-top: 0;
+
      }
 
    }
