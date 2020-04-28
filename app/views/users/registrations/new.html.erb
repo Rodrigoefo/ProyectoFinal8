@@ -6,7 +6,12 @@
     <div class="form-group">
       <div class="control-label ">
         <%= f.label :name, "Nombres" %>
+        <div class="input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+          </div>
         <%= f.text_field :name, autofocus: true , class: "form-control form-control-sm " %>
+      </div>
       </div>
     </div>
   </div>
@@ -14,7 +19,12 @@
     <div class="form-group">
       <div class="control-label">
         <%= f.label :lastname, "Apellidos" %>
+        <div class="input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+          </div>
         <%= f.text_field :lastname, class: "form-control form-control-sm" %>
+        </div>
       </div>
     </div>
   </div>
@@ -23,10 +33,14 @@
   <div class="form-group">
     <div class="control-label">
       <%= f.label :rut %>
-    </div>
-    <div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id=""><i class="far fa-id-card"></i></span>
+        </div>
       <%= f.text_field :rut, class: "form-control form-control-sm" %>
+      </div>
     </div>
+
   </div>
   <div class="form-group">
     <div class="control-label">

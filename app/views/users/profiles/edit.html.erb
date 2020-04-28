@@ -1,118 +1,145 @@
 
+<div class="container-fluid mb-5">
+  <div class="row mx-1">
+      <div class="col-lg-2 col-md-4 p-2">
+        <h5 class="perfil"><mark>Edita tu Perfil</mark></h5>
+      <% if current_user.profile.photo_url %>
+      <p><%= image_tag current_user.profile.photo_url, class: "avatar", size: "185x185" %></p>
+      <% end %>
+      <!-- <h4><%= current_user.name %> <%= current_user.lastname %></h4>
+      <p><%= current_user.email %></p> -->
+      <p><%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-info btn-sm btn-block" %></p>
 
-<div class="row mx-1">
-    <div class="col-lg-2 col-md-4 p-2">
-    <% if current_user.profile.photo_url %>
-    <p><%= image_tag current_user.profile.photo_url, class: "avatar", size: "185x185" %></p>
-    <% end %>
-    <h4><%= current_user.name %> <%= current_user.lastname %></h4>
-    <p><%= current_user.email %></p>
-    <p><%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-info btn-sm btn-block" %></p>
+    </div>
+  <!--current_user es el objeto actual que está siendo editado. Al tener un ID, el formulario infiere que el método es POST y no GET -->
+    <div class="col-lg-10 col-md-8">
+      <%= form_for current_user, url: users_profile_path, html: {novalidate: true, class: 'needs-validation'} do |form| %>
+        <% if current_user.errors.any? %>
+            <% current_user.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+            <% end %>
+        <% end %>
 
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <div class="control-label ">
+              <%= form.label :name, "Nombre" %>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+                  </div>
+              <%= form.text_field :name, class: "form-control form-control-sm" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="control-label ">
+              <%= form.label :lastname, "Apellido" %>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+                </div>
+              <%= form.text_field :lastname, class: "form-control form-control-sm" %>
+            </div>
+            </div>
+          </div>
+        </div>
+  <!--fields_for, al pasarle un modelo, permite añadir elementos de otro modelo en el formulario. El model de , en este caso de USER, debe declararse que se permite que PROFILE puede ser anidado  -->
+        </div>
+
+
+        <%= form.fields_for :profile, current_user.profile do |profile_form| %>
+
+      <div class="form-group">
+        <div class="control-label">
+          <%= profile_form.label :photo, "Sube una foto"%>
+          <%= profile_form.file_field :photo%>
+
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-row">
+        <div class="control-label">
+          <%= profile_form.label :phone, "Teléfono", :for => "validationCustom01" %>
+          <%= profile_form.text_field :phone, type: "number", class: "form-control form-control-sm", :id => "validationCustom01", :required => true%>
+          <div class="invalid-feedback">
+           Campo Obligatorio
+         </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col">
+
+          <div class= "form-group">
+            <div class="control-label">
+              <% if current_user.influencer? %>
+              <%= profile_form.label :social_network, "Nombre de tu Red Social",  :for => "validationCustom02" %>
+              <%= profile_form.text_field :social_network, class: "form-control form-control-sm", :id => "validationCustom02", :required => true%>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
+              <% end  %>
+            </div>
+          </div>
+
+    </div>
   </div>
-<!--current_user es el objeto actual que está siendo editado. Al tener un ID, el formulario infiere que el método es POST y no GET -->
-  <div class="col-lg-10 col-md-8">
-    <%= form_for current_user, url: users_profile_path do |form| %>
-      <% if current_user.errors.any? %>
-          <% current_user.errors.full_messages.each do |msg| %>
-          <%= msg %><br>
+
+      <div class= "form-group">
+        <div class="control-label">
+          <% if current_user.influencer? %>
+          <%= profile_form.label :social_network_url, "URL de tu Red Social", :for => "validationCustom03" %>
+          <%= profile_form.text_field :social_network_url, class: "form-control form-control-sm", :id => "validationCustom03", :required => true%>
+          <div class="invalid-feedback">
+           Campo Obligatorio
+         </div>
           <% end %>
-      <% end %>
-
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <div class="control-label ">
-            <%= form.label :name, "Nombre" %>
-            <%= form.text_field :name, class: "form-control form-control-sm" %>
-          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="form-group">
-          <div class="control-label ">
-            <%= form.label :lastname, "Apellido" %>
-            <%= form.text_field :lastname, class: "form-control form-control-sm" %>
-          </div>
+
+      <div class="form-group">
+        <div class="control-label">
+          <% if current_user.tradicional? %>
+          <%= profile_form.label :media_name, "¿En qué medio trabajas?", :for => "validationCustom04" %>
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+            </div>
+          <%= profile_form.text_field :media_name, class: "form-control", class: "form-control form-control-sm", :id => "validationCustom03", :required => true%>
+            <div class="invalid-feedback">
+             Campo Obligatorio
+           </div>
+          <% end %>
+
+           </div>
         </div>
       </div>
-<!--fields_for, al pasarle un modelo, permite añadir elementos de otro modelo en el formulario. El model de , en este caso de USER, debe declararse que se permite que PROFILE puede ser anidado  -->
-      </div>
 
+      <div class="form-group">
+        <div class="control-lavel">
+          <%= profile_form.label :description, "Aquí tu experiencia profesinal" %>
+          <%= profile_form.hidden_field :description, class: "form-control form-control-sm", id: :description_editor%>
+            <trix-editor class="trix-content" input="description_editor" > </trix-editor>
 
-      <%= form.fields_for :profile, current_user.profile do |profile_form| %>
-
-    <div class="form-group">
-      <div class="control-label">
-        <%= profile_form.label :photo, "Sube una foto"%>
-        <%= profile_form.file_field :photo%>
-        <div class="valid-feedback">
-        Looks good!
-      </div>
-
-      </div>
-    </div>
-
-<div class="row">
-  <div class="col">
-    <div class="form-group">
-      <div class="control-label">
-        <%= profile_form.label :phone, "Teléfono" %>
-        <%= profile_form.text_field :phone, class: "form-control form-control-sm"%>
-      </div>
-
-    </div>
-
-  </div>
-  <div class="col">
-
-        <div class= "form-group">
-          <div class="control-label">
-            <% if current_user.influencer? %>
-            <%= profile_form.label :social_network, "Nombre de tu Red Social" %>
-            <%= profile_form.text_field :social_network, class: "form-control form-control-sm"%>
-            <% end  %>
-          </div>
         </div>
 
-  </div>
-</div>
-
-    <div class= "form-group">
-      <div class="control-label">
-        <% if current_user.influencer? %>
-        <%= profile_form.label :social_network_url, "URL de tu Red Social" %>
-        <%= profile_form.text_field :social_network_url, class: "form-control form-control-sm"%>
-        <% end %>
       </div>
-    </div>
-
-    <div class="form-group">
-      <div class="control-label">
-        <% if current_user.tradicional? %>
-        <%= profile_form.label :media_name, "¿En qué medio trabajas?" %>
-        <%= profile_form.text_field :media_name, class: "form-control "%>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="control-lavel">
-        <%= profile_form.label :description, "Copia tu CV" %>
-        <%= profile_form.hidden_field :description, class: "form-control form-control-sm", id: :description_editor%>
-          <trix-editor class="trix-content" input="description_editor" > </trix-editor>
-
-      </div>
-
-    </div>
-      <% end %>
-
-
       <div class="actions">
         <%= form.submit "Actualizar", class: "btn btn-info" %>
       </div>
-    <% end %>
+        <% end %>
+      <% end %>
+
+    </div>
 
   </div>
+
 
 </div>

@@ -1,24 +1,26 @@
 
-<div class="container-fluid">
+<div class="container-fluid altoMinimo">
     <div class="row">
         <div class="col-xl-2 col-sm-12">
-          <h5>Panel de <%= current_organizator.name %></h5>
+          <h5><mark>Panel de <%= current_organizator.name %></mark></h5>
+          <br>
         <%= link_to "Mi Perfil", organizators_profile_show_path, class: "btn  btn-sm btn-info btn-block" %>
+        <%= link_to 'Editar Perfil', organizators_profile_edit_path, class: "btn btn-sm btn-secondary btn-block mb-2" %>
         <%= link_to 'Crear Nueva Pauta', new_organizators_press_conference_path, class: "btn btn-sm btn-secondary btn-block mb-2" %>
         </div>
         <div class="col-xl-10 col-sm-12">
 
 
-      <h5>Todas mis pautas</h5>
+      <h5><mark>Todas mis pautas</mark></h5>
       <div class="table-responsive-sm">
         <table class="table table-striped">
           <thead class="bg-secondary">
             <tr>
               <th>Título</th>
 
-              <th>fecha</th>
+              <th>Fecha</th>
               <th>Hora</th>
-              <th>Dónde</th>
+              <th>Dirección</th>
               <th>Estado Actual</th>
               <th>Postulaciones</th>
 

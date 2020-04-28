@@ -2,13 +2,75 @@ body {
   font-size: 14px;
 }
 
+.altoMinimo{
+  min-height: 60vh;
+}
+.contacto{
+  min-height: 60vh;
+}
+.team{
+  min-height: 60vh;
+}
+.about{
+  min-height: 60vh;
+}
+
 #estilomapa{
   width: 610px;
 }
 
+.jumbotron {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: white;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 30px;
+
+}
+
+
+.jumbotron2 {
+  background-color: white;
+  background-image: url("camara.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border: 2px solid #d6d2d2; */
+  border-radius: 14px;
+
+
+}
+.jumbotron3 {
+  background-color: white;
+  background-image: url("noticiasLector.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border: 2px solid #d6d2d2; */
+  border-radius: 14px;
+  margin-bottom: 40px;
+}
+
+
+.bordes {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
+
+
+
 .maxalto1{
 height: 60vh;
 background-image: url("noticias2.jpeg");
+background-size: contain;
+background-repeat: no-repeat;
+float: right;
+background-position: center;
+
+}
+.maxalto5{
+height: 60vh;
+background-image: url("createPress.jpeg");
 background-size: contain;
 background-repeat: no-repeat;
 float: right;
@@ -21,11 +83,31 @@ background-position: center;
 padding-top: 5%;
 
 }
+.maxalto6{
+margin-bottom: 15px;
+
+}
+.maxalto3{
+height: 60vh;
+background-image: url("hombredenegocios2b.jpg");
+background-size: contain;
+background-repeat: no-repeat;
+float: right;
+background-position: center;
+
+}
+
+
+.maxalto4{
+padding-top: 5%;
+
+}
 
 .form_layout {
   width: 50%;
   margin: auto;
   padding: 10px;
+  margin-bottom: 20px;
   border: 1px solid #bdbcbb;
   border-radius: 4px;
 }
@@ -39,13 +121,32 @@ padding-top: 5%;
 
 .pbar{
 color: white;
-
 }
 
-.backSigIn{
-
+.active {
+  background-color: grey!important;
+  border: 1px solid grey!important;
 }
 
+.navbar{
+  height: 90px;
+
+}
+.nav-link{
+  color: grey;
+}
+.nav-link:hover{
+  color: white;
+
+}
+/* .backSigIn{
+
+} */
+
+mark {
+  background-color: #494d52;
+  color: white;
+}
 
 .sombra_box {
   box-shadow: 2px 2px 5px #999;
@@ -77,6 +178,7 @@ th.celda {
    min-width: 115px;
    border-color: #cccccc;
  }
+
 
  i.fa-trash-alt {
    color: red;
@@ -130,6 +232,26 @@ th.celda {
  /* Media Queries */
 
  @media (max-width: 767px) {
+
+   .jumbotron {
+     background-color: white;
+     width: 100%;
+
+
+   }
+
+    .footer{
+      margin-top: 15px;
+      padding-left: 35px;
+
+    }
+    .footer2{
+      margin-top: 15px;
+
+    }
+
+
+
      .form_layout {
        width: 100%;
        margin: auto;
@@ -149,6 +271,16 @@ th.celda {
      }
 
      .maxalto2{
+     padding-top: 0;
+
+     }
+     .maxalto3{
+     height: 0;
+     width: 100%;
+
+     }
+
+     .maxalto4{
      padding-top: 0;
 
      }

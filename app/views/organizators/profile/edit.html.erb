@@ -1,2 +1,82 @@
-<h1>Organizators::Profile#edit</h1>
-<p>Find me in app/views/organizators/profile/edit.html.erb</p>
+<div class="container-fluid altoMinimo">
+
+  <div class="row mx-1">
+      <div class="col-lg-2 col-md-4 p-2">
+        <h5 class="perfil"><mark>Edita tu Perfil</mark></h5>
+
+      <p><%= link_to "Regresar a tus pautas", organizators_press_conferences_path, class: "btn btn-info btn-sm btn-block" %></p>
+
+    </div>
+
+    <div class="col-lg-10 col-md-8">
+      <%= form_for current_organizator, url: organizators_profile_show_path, html: {novalidate: true, class: 'needs-validation'} do |form| %>
+        <% if current_organizator.errors.any? %>
+            <% current_organizator.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+            <% end %>
+        <% end %>
+        <div class="col">
+          <div class="form-group">
+            <div class="control-label ">
+              <%= form.label :name, "Nombre", :for => "validationCustom01" %>
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+                  </div>
+              <%= form.text_field :name, class: "form-control form-control-sm" , :id => "validationCustom01", :required => true %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="control-label ">
+              <%= form.label :phone, "Teléfono", :for => "validationCustom02" %>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+                </div>
+              <%= form.text_field :phone, type: "number", class: "form-control form-control-sm", :id => "validationCustom02", :required => true %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <div class="control-label ">
+              <%= form.label :address, "Dirección", :for => "validationCustom03" %>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id=""><i class="fas fa-map-marker-alt"></i></span>
+                </div>
+              <%= form.text_field :address, class: "form-control form-control-sm", :id => "validationCustom02", :required => true  %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <div class="control-label ">
+                <%= form.label :description, "Descripción" %>
+                <%= form.text_area :description, class: "form-control form-control-sm" %>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <%= form.submit "Actualizar", class: "btn btn-info" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

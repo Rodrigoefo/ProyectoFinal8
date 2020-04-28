@@ -1,17 +1,16 @@
 
-<div class="container">
+<div class="container-fluid altoMinimo">
 
-  <div class="row">
-    <div class="col-2">
-      <h3>Perfil del Organizador</h3>
-      <p><%= link_to "Crear una pauta", new_organizators_press_conference_path, class: "btn btn-sm btn-secondary" %></p>
-      <p><%= link_to "Ver mis pautas", organizators_press_conferences_path, class: "btn btn-sm btn-dark" %></p>
-
+  <div class="row mx-1">
+    <div class="col-lg-2 col-md-4 p-2">
+      <h5><mark>Perfil de <%= current_organizator.name %></mark></h5><br>
+      <%= link_to "Crear una pauta", new_organizators_press_conference_path, class: "btn btn-sm btn-secondary btn-block" %>
+      <%= link_to "Regresar a tus pautas", organizators_press_conferences_path, class: "btn btn-sm btn-info btn-block" %>
 
 
     </div>
 
-    <div class="col-10">
+    <div class="col-lg-10 col-md-8">
 
       <ul>
         <li><%= current_organizator.name%> </li>

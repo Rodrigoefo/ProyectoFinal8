@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <h4>Todas las pautas públicas</h4>
+<div class="container-fluid mb-5">
+  <h5><mark>Todas las pautas públicas</mark></h5>
 
 <div class="table-responsive-sm">
   <table class="table table-striped">
@@ -20,7 +20,7 @@
   <% @press_conferences.each do |press_conference| %>
     <tr>
       <td><%= press_conference.title %></td>
-      <td><%= press_conference.date.strftime("%d %B %Y") %></td>
+      <td><%= press_conference.date.strftime("%d/%m/%Y") %></td>
       <td><%= press_conference.time.strftime("%H:%M") %></td>
       <td><%= press_conference.address %></td>
       <td><%= press_conference.organizator.name %></td>
@@ -32,16 +32,17 @@
         <td>
 
 
-      <% if press_conference.has_solicitud(current_user)%>
-            <td>Ya postulaste</td>
-        <% else %>
-        <% if current_user.profile.is_completed  %>
-            <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-outline-secondary btn-sm"  %></td>
-        <%else  %>
-          <td>Debes llenar tu perfil primero</td>
-        <%end  %>
-      <%end  %>
+          <% if press_conference.has_solicitud(current_user)%>
 
+                      <td>Ya postulaste</td>
+
+             <% else %>
+                 <% if current_user.profile.is_completed  %>
+                     <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-outline-secondary btn-sm"  %></td>
+                 <%else  %>
+                    <td>Debes llenar tu perfil primero</td>
+             <%end  %>
+           <%end  %>
 
 
     </tr>

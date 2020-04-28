@@ -3,7 +3,10 @@ class PressConference < ApplicationRecord
   has_many :solicituds
   has_many :users, through: :solicituds
 
-  validates :title, :description, :address , presence: true
+  # validates :title, :description, :address , presence: true
+  # FUE VALIDADO POR Bootstrap
+
+
   validates_length_of :title, :maximum => 60
 
 

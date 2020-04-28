@@ -1,12 +1,14 @@
-
-<h5>¿Quienes han postulado a la pauta: <strong><%= @press_conference.title %></strong>?</h5>
+<div class="container-fluid altoMinimo">
+  <h5><mark>¿Quienes han postulado a la pauta:</mark> <strong><%= @press_conference.title %></strong>?</h5>
+  <br>
+  <div class="table-responsive-sm">
     <table class="table table-striped">
     <thead class="bg-danger">
     <tr>
-      <td>Id</td>
-      <th>Nombre Solicitante</th>
-      <th>Email Solicitante</th>
-      <th>Solicitud realiza el</th>
+
+      <th>Nombre del Postulante</th>
+      <th>Email Postulante</th>
+      <th>Postulación realiza el</th>
       <th>Sobre el postulante</th>
 
 
@@ -17,10 +19,9 @@
     <tbody>
     <% @solicitudes.each do |solicitud| %>
       <tr>
-        <td><%= solicitud.id %></td>
         <td><%= solicitud.user.name %> <%= solicitud.user.lastname %></td>
         <td><%= solicitud.user.email %></td>
-        <td><%= solicitud.created_at.strftime("%d %B %Y") %></td>
+        <td><%= solicitud.created_at.strftime("%d/%m/%Y") %></td>
         <td><%= link_to organizators_user_path(solicitud.user, press_conference_id: solicitud.press_conference.id) do %>
           <i class="fas fa-lg fa-user"></i>
           <% end %>
@@ -37,4 +38,8 @@
     <% end %>
     </tbody>
     </table>
-    <%= link_to "Volver a Pautas", organizators_press_conferences_path, class: "btn btn-dark" %>
+  </div>
+
+      <p><%= link_to "Volver a Pautas", organizators_press_conferences_path, class: "btn btn-dark" %></p>
+
+</div>

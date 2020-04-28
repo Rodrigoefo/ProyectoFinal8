@@ -6,22 +6,25 @@
         <% if current_user.profile.photo_url %>
         <p><%= image_tag current_user.profile.photo_url, class: "avatar", size: "185x185" %></p>
         <% end %>
-        <h5><%= current_user.name %> <%= current_user.lastname %></h5>
-        <p><%= current_user.email %></p>
+        <!-- <h5><%= current_user.name %> <%= current_user.lastname %></h5>
+        <p><%= current_user.email %></p> -->
       </div>
       <%= link_to "Ver Perfil", users_profile_path, class: "btn btn-dark mt-1 btn-sm btn-block" %>
       <%= link_to "Editar Perfil" , edit_users_profile_path, class: "btn btn-dark mt-1 btn-sm btn-block"%>
       <%= link_to "Ver Totas las Pautas" , users_press_conferences_path, "data-turbolinks": false, class: "btn btn-info mt-1 btn-sm btn-block mb-3" %>
-
-
-
+      <div class="mb-3">
+        <ul class="list-group">
+            <li class="list-group-item active">Tus Postulaciones</li>
+            <li class="list-group-item">Aceptadas:  <span class="badge badge-info"><%= @solicitudAceptada.count %></span></li>
+            <li class="list-group-item">En progreso:  <span class="badge badge-info"><%= @solicitudProgreso.count %></span></li>
+            </ul>
+      </div>
     </div>
 
     <div class="col-lg-10 col-md-8 col-xs-12">
 
-
 <!--Tabla de Postulaciones Aceptadas -->
-      <h6>Postulaciones <strong>aceptadas</strong></h6>
+      <h6><mark>Postulaciones aceptadas</mark></h6>
 <div class="table-responsive-sm">
   <table class="table table-striped mb-5">
     <thead class="bg-dark">
@@ -45,11 +48,11 @@
           <td><%= solicitud.press_conference.time.strftime("%H:%M") %></td>
           <td><%= solicitud.press_conference.address %></td>
           <td><%= solicitud.press_conference.organizator.name %></td>
-          <td><%= link_to  users_press_conference_path(solicitud.press_conference.id) do %>
-            <i class="fas fa-lg fa-eye"></i></
+          <td><%= link_to  users_press_conference_path(solicitud.press_conference.id) , "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Ver detalles" do %>
+            <i class="fas fa-lg fa-eye"></i>
             <%end  %>
           </td>
-          <td><%= link_to  users_press_conference_path(solicitud), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <td><%= link_to  users_press_conference_path(solicitud) , "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Eliminar Postulación", method: :delete, data: { confirm: '¿Seguro vas a eliminar esta pauta?' } do %>
             <i class="far fa-lg fa-trash-alt"></i>
             <%end%>
           </td>
@@ -65,8 +68,7 @@
 
 
 <!--Tabla de Postulaciones  -->
-        <h6>Postulaciones <strong>en progreso</strong></h6>
-
+        <h6><mark>Postulaciones en progreso</mark></h6>
     <div class="table-responsive-sm">
       <table class="table table-striped">
       <thead class="bg-dark">
@@ -89,11 +91,11 @@
               <td><%= solicitud.press_conference.time.strftime("%H:%M") %></td>
               <td><%= solicitud.press_conference.address %></td>
               <td><%= solicitud.press_conference.organizator.name %></td>
-              <td><%= link_to  users_press_conference_path(solicitud.press_conference.id) do %>
-                <i class="fas fa-lg fa-eye"></i></
+              <td><%= link_to  users_press_conference_path(solicitud.press_conference.id), "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Ver detalles" do %>
+                <i class="fas fa-lg fa-eye"></i>
                 <%end  %>
               </td>
-              <td><%= link_to  users_press_conference_path(solicitud), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <td><%= link_to  users_press_conference_path(solicitud) , "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Eliminar Postulación", method: :delete, data: { confirm: '¿Seguro vas a eliminar esta pauta?' } do %>
                 <i class="far fa-lg fa-trash-alt"></i>
                 <%end%>
               </td>
@@ -109,7 +111,7 @@
 
       <!--Tabla Folling  -->
       <br>
-      <h6><strong>Empresas</strong> que sigo:</h6>
+        <h6><mark>Organizaciones a las que sigues</mark> <span class="badge badge-info"><%= @follows.count %></span></h6>
 
       <div class="table-responsive-sm">
         <table class="table table-striped">
@@ -132,10 +134,10 @@
                 <td><%=press_conference.time.strftime("%H:%M") %></td>
                 <td><%=press_conference.address %></td>
                 <td><%=press_conference.organizator.name %></td>
-                <td><%= link_to  users_press_conference_path(press_conference.id) do %>
-                  <i class="fas fa-lg fa-eye"></i></
+                <td><%= link_to  users_press_conference_path(press_conference.id) , "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Ver detalles" do %>
+                  <i class="fas fa-lg fa-eye"></i>
                   <%end  %>
-                  <td><%= link_to  users_press_conference_path(press_conference), method: :delete, data: { confirm: '¿Seguro vas a eliminar esta pauta?' } do %>
+                  <td><%= link_to  users_press_conference_path(press_conference)  , "data-toggle" => "tooltip", "data-placement" => "top", "title" => "Eliminar Postulación", method: :delete, data: { confirm: '¿Seguro vas a eliminar esta pauta?' } do %>
                     <i class="far fa-lg fa-trash-alt"></i>
                     <%end%>
                   </td>
@@ -148,7 +150,7 @@
 
 
 
-  
+
 
     </div>
 

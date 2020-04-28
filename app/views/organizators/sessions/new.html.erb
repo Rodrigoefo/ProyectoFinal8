@@ -1,16 +1,31 @@
-<div class="container form_layout ">
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="row">
-    <div class="col-sm-12">
-    <div class="field form-group">
+    <div class="col-sm-12 col-md-6 maxalto3">
+
+
+    </div>
+
+
+    <div class="col-sm-12 col-md-4 maxalto4">
+    <div class="field form-group mt-5">
       <%= f.label :email %><br />
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id=""><i class="far fa-lg fa-envelope"></i></span>
+        </div>
       <%= f.email_field :email, autofocus: true, class: "form-control  form-control-sm", autocomplete: "email"%>
     </div>
 
     <div class="field form-group">
         <%= f.label :password %><br />
+        <div class="input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i class="fas fa-lg fa-key"></i></span>
+          </div>
         <%= f.password_field :password, class: "form-control form-control-sm",  autocomplete: "current-password" %>
+    </div>
     </div>
 
       <% if devise_mapping.rememberable? %>
@@ -28,6 +43,6 @@
 
       </div>
     </div>
-    <%= render "organizators/shared/links" %>
-  </div>
+
+
 </div>

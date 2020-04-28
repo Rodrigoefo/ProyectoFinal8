@@ -9,7 +9,8 @@
           <p class="pbar">Bienvenido <%= current_organizator.name %></p>
         <% end %>
   <%else %>
-      <a class="navbar-brand" href="<%= root_path %>">YoLoCubro.com</a>
+      <a class="navbar-brand" href="<%= root_path %>"><i class="fas fa-lg fa-home"></i> | YoLoCubro.com  </a>
+
   <%end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,15 +25,20 @@
       </li>
         <li class="nav-item">
           <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+      <% elsif  organizator_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Salir", destroy_organizator_session_path, method: :delete, class: "nav-link" %>
+          </li>
+      <% else %>
+            <li class="nav-item">
+              <%= link_to "Contáctanos", home_contact_path, class: "nav-link" %>
+           </li>
 
-      <% end %>
+           <li class="nav-item">
+            <%= link_to "Quienes Somos", home_about_path, class: "nav-link" %>
+          </li>
+      <% end  %>
 
-    <% if organizator_signed_in? %>
-      <li class="nav-item">
-      </li>
-        <li class="nav-item">
-            <%= link_to "Salir", destroy_organizator_session_path, method: :delete, class: "nav-link" %></li>
-        <%end%>
     </ul>
   </div>
 </nav>

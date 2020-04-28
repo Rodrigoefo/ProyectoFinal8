@@ -1,5 +1,6 @@
 class Users::PressConferencesController < ApplicationController
 
+
   def index
       @press_conferences = PressConference.where(status: "publicada").page(params[:page]).per(5)
 
