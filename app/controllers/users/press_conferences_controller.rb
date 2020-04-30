@@ -1,8 +1,17 @@
 class Users::PressConferencesController < ApplicationController
 
-
   def index
-      @press_conferences = PressConference.where(status: "publicada").page(params[:page]).per(5)
+
+      if params[:q].present?
+
+          # @press_conferences = PressConference.where('title like ? OR address like ?', "%#{params[:q]}%", "%#{params[:q]}%").order("date DESC")
+
+          @press_conferences = PressConference.joins(:organizator).where('press_conferences.title like ? OR press_conferences.address like ? OR organizators.name like ?', "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%").order("date DESC")
+      else
+          @press_conferences = PressConference.where(status: "publicada").page(params[:page]).per(8).order("date DESC")
+
+      end
+
 
   end
 

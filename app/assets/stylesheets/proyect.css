@@ -19,6 +19,7 @@ body {
   width: 610px;
 }
 
+
 .jumbotron {
   margin-top: 30px;
   padding: 10px;
@@ -103,6 +104,16 @@ padding-top: 5%;
 
 }
 
+
+.fa-sitemap{
+color: green;
+
+}
+
+.fa-microphone{
+color: green;
+
+}
 .form_layout {
   width: 50%;
   margin: auto;

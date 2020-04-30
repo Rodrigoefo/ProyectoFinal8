@@ -1,5 +1,24 @@
-<div class="container-fluid mb-5">
-  <h5><mark>Todas las pautas públicas</mark></h5>
+<div class="container-fluid mb-5 altoMinimo ">
+<div class="row">
+  <div class="col-6">
+    <h5><mark class="align-middle">Todas las pautas públicas</mark></h5>
+  </div>
+  <div class="col-6">
+    <form class="justify-content-end mb-2" action="<%= users_press_conferences_path %>">
+      <div class="input-group">
+
+          <div class="input-group-prepend">
+              <span class="input-group-text" id=""><i class="fas fa-search"></i></span>
+          </div>
+          <input class="form-control" type="search" name="q" value="" autocomplete="off" placeholder="Busca por palabras" aria-label="Search">
+
+        </div>
+
+    </form>
+  </div>
+</div>
+
+
 
 <div class="table-responsive-sm">
   <table class="table table-striped">
@@ -16,7 +35,7 @@
   </tr>
   </thead>
 
-  <tbody>
+  <tbody id="comentarioAtrapa">
   <% @press_conferences.each do |press_conference| %>
     <tr>
       <td><%= press_conference.title %></td>
@@ -30,8 +49,6 @@
       </td>
 
         <td>
-
-
           <% if press_conference.has_solicitud(current_user)%>
 
                       <td>Ya postulaste</td>
@@ -51,7 +68,9 @@
   </table>
 </div>
 
-<span class="float-right"><%= paginate @press_conferences%></span>
+<% if @press_conferences.count > 0  %>
+<span class="float-right"> <%=paginate @press_conferences%></span>
+<% end  %>
 
-<%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-danger mb-2" %>
+<%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-outline-danger mb-2" %>
 </div>

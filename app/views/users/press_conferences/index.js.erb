@@ -1,0 +1,33 @@
+
+document.querySelector("#comentarioAtrapa").innerHTML = `  <tbody id="comentarioAtrapa">
+  <% @press_conferences.each do |press_conference| %>
+    <tr>
+      <td><%= press_conference.title %></td>
+      <td><%= press_conference.date.strftime("%d/%m/%Y") %></td>
+      <td><%= press_conference.time.strftime("%H:%M") %></td>
+      <td><%= press_conference.address %></td>
+      <td><%= press_conference.organizator.name %></td>
+      <td><%= link_to  users_press_conference_path(press_conference) do %>
+        <i class="fas fa-lg fa-eye"></i></
+        <%end  %>
+      </td>
+
+        <td>
+
+
+          <% if press_conference.has_solicitud(current_user)%>
+
+                      <td>Ya postulaste</td>
+
+             <% else %>
+                 <% if current_user.profile.is_completed  %>
+                     <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-outline-secondary btn-sm"  %></td>
+                 <%else  %>
+                    <td>Debes llenar tu perfil primero</td>
+             <%end  %>
+           <%end  %>
+
+
+    </tr>
+  <% end %>
+  </tbody>`
