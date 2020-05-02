@@ -19,13 +19,18 @@ body {
   width: 610px;
 }
 
+.fa-heart{
+color: red;
+}
+
+
 
 .jumbotron {
   margin-top: 30px;
   padding: 10px;
   background-color: white;
-  width: 70%;
-  margin: auto;
+  width: 90%;
+  margin-left: 25px;
   margin-bottom: 30px;
 
 }
@@ -130,17 +135,13 @@ color: green;
   height: 100vh;
 }
 
-.pbar{
-color: white;
-}
-
 .active {
   background-color: grey!important;
   border: 1px solid grey!important;
 }
 
 .navbar{
-  height: 90px;
+  min-height: 90px;
 
 }
 .nav-link{
@@ -150,9 +151,9 @@ color: white;
   color: white;
 
 }
-/* .backSigIn{
-
-} */
+ .nav-item:hover{
+   border-bottom: 1px solid grey;
+ }
 
 mark {
   background-color: #494d52;
@@ -185,6 +186,10 @@ th.celda {
    min-height: 80px;
  }
 
+ .navbar-brand{
+   font-size: 2em;
+ }
+
  .btn-width {
    min-width: 115px;
    border-color: #cccccc;
@@ -205,8 +210,58 @@ th.celda {
    margin:auto;
  }
 
+ /*  Card Home styles*/
 
 
+
+.fechaCard{
+  background-color: red;
+  color: white;
+  width: 75px;
+  height: 20px;
+  padding-left: 2px;
+  position: relative;
+  top: 2px;
+  left: -10px
+
+}
+
+.fechaCard-texto{
+  color: grey;;
+  width: 75px;
+  height: 15px;
+  padding-left: 2px;
+  padding-bottom: 17px;
+  position: relative;
+  top: 2px;
+  left: -10px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+
+}
+
+.card-body{
+  padding: 5px;
+
+}
+
+.card-text{
+  font-size: 0.9em;
+}
+
+.card-footer{
+  padding-right: 5px;
+  padding-bottom: 5px;
+
+}
+
+.card-title{
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.card-img-top{
+  min-height: 100px;
+}
 
  /*  Pagination styles*/
 
@@ -243,6 +298,11 @@ th.celda {
  /* Media Queries */
 
  @media (max-width: 767px) {
+
+  
+   .card-footer{
+     display: none;
+   }
 
    .jumbotron {
      background-color: white;

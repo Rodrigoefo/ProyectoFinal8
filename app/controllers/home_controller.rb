@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
 
   def index
+    @press_conferences = PressConference.where(status: "publicada").limit(3).order("created_at DESC")
 
   end
 

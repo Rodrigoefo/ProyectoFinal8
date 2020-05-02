@@ -10,6 +10,10 @@
         <!-- <h5><%= current_user.name %> <%= current_user.lastname %></h5>
         <p><%= current_user.email %></p> -->
       </div>
+
+
+      <p class="pbar">Bienvenido <%= current_user.name %></p>
+  
       <%= link_to "Ver Perfil", users_profile_path, class: "btn btn-dark mt-1 btn-sm btn-block" %>
       <%= link_to "Editar Perfil" , edit_users_profile_path, class: "btn btn-dark mt-1 btn-sm btn-block"%>
       <%= link_to "Ver Totas las Pautas" , users_press_conferences_path, "data-turbolinks": false, class: "btn btn-info mt-1 btn-sm btn-block mb-3" %>
@@ -28,10 +32,10 @@
     <div class="col-lg-10 col-md-8 col-xs-12">
 
 <!--Tabla de Postulaciones Aceptadas -->
-      <h6><mark>Postulaciones aceptadas</mark></h6>
+      <h6><i class="fas fa-user-check"></i> <strong>Postulaciones aceptadas</strong></h6>
 <div class="table-responsive-sm">
   <table class="table table-striped mb-5">
-    <thead class="bg-dark">
+    <thead class="bg-info">
       <tr>
         <th>Título</th>
         <th>Fecha</th>
@@ -44,11 +48,11 @@
 
       <tbody>
 
-      <% @solicitudes.each do |solicitud| %>
-        <% if solicitud.status === "accepted"%>
+      <% @solicitudAceptada.each do |solicitud| %>
+
         <tr>
           <td><%=solicitud.press_conference.title %></td>
-          <td><%= solicitud.press_conference.date.strftime("%d %B %Y") %></td>
+          <td><%= solicitud.press_conference.date.strftime("%d/%m/%Y") %></td>
           <td><%= solicitud.press_conference.time.strftime("%H:%M") %></td>
           <td><%= solicitud.press_conference.address %></td>
           <td><%= solicitud.press_conference.organizator.name %></td>
@@ -62,7 +66,7 @@
           </td>
 
         </tr>
-      <% end %>
+
     <% end %>
       </tbody>
   </table>
@@ -72,10 +76,10 @@
 
 
 <!--Tabla de Postulaciones  -->
-        <h6><mark>Postulaciones en progreso</mark></h6>
+        <h6><i class="fas fa-tasks"></i> <strong>Postulaciones en progreso </strong></h6>
     <div class="table-responsive-sm">
       <table class="table table-striped">
-      <thead class="bg-dark">
+      <thead class="bg-info">
       <tr>
         <th>Título</th>
         <th>Fecha</th>
@@ -87,11 +91,11 @@
       </thead>
 
       <tbody>
-      <% @solicitudes.each do |solicitud| %>
-      <% if solicitud.status === "in_progress"%>
+      <% @solicitudProgreso.each do |solicitud| %>
+
             <tr>
               <td><%=solicitud.press_conference.title %></td>
-              <td><%= solicitud.press_conference.date.strftime("%d %B %Y") %></td>
+              <td><%= solicitud.press_conference.date.strftime("%d/%m/%Y") %></td>
               <td><%= solicitud.press_conference.time.strftime("%H:%M") %></td>
               <td><%= solicitud.press_conference.address %></td>
               <td><%= solicitud.press_conference.organizator.name %></td>
@@ -107,7 +111,7 @@
 
             </tr>
           <% end %>
-      <%end %>
+
       </tbody>
       </table>
     </div>
@@ -115,11 +119,11 @@
 
       <!--Tabla Folling  -->
       <br>
-        <h6><mark>Organizaciones a las que sigues</mark> <span class="badge badge-info"><%= @follows.count %></span></h6>
+        <h6><i class="far fa-thumbs-up"></i> <strong>Organizaciones a las que sigues</strong> <span class="badge badge-info"><%= @follows.count %></span></h6>
 
       <div class="table-responsive-sm">
         <table class="table table-striped">
-        <thead class="bg-dark">
+        <thead class="bg-info">
         <tr>
           <th>Título</th>
           <th>Fecha</th>
@@ -134,7 +138,7 @@
         <% @press_conferences.each do |press_conference| %>
               <tr>
                 <td><%=press_conference.title %></td>
-                <td><%=press_conference.date.strftime("%d %B %Y") %></td>
+                <td><%=press_conference.date.strftime("%d/%m/%Y") %></td>
                 <td><%=press_conference.time.strftime("%H:%M") %></td>
                 <td><%=press_conference.address %></td>
                 <td><%=press_conference.organizator.name %></td>

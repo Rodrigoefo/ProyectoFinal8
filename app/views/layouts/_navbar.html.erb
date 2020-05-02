@@ -2,15 +2,8 @@
 
   <% if user_signed_in? || organizator_signed_in? %>
       <p class="navbar-brand">YoLoCubro.com |</p>
-
-        <% if current_user.present? %>
-          <p class="pbar">Bienvenido <%= current_user.name %></p>
-        <% else %>
-          <p class="pbar">Bienvenido <%= current_organizator.name %></p>
-        <% end %>
   <%else %>
-      <a class="navbar-brand" href="<%= root_path %>"><i class="fas fa-lg fa-home"></i> | YoLoCubro.com  </a>
-
+      <a class="navbar-brand" href="<%= root_path %>"><i class="fas fa-lg fa-home"></i> |  YoLoCubro </a>
   <%end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +24,7 @@
           </li>
       <% else %>
             <li class="nav-item">
-              <%= link_to "Contáctanos", home_contact_path, class: "nav-link" %>
+              <%= link_to "Contáctanos", home_contact_path, class: "nav-link"%>
            </li>
 
            <li class="nav-item">

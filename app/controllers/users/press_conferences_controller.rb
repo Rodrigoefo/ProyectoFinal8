@@ -3,12 +3,12 @@ class Users::PressConferencesController < ApplicationController
   def index
 
       if params[:q].present?
-
           # @press_conferences = PressConference.where('title like ? OR address like ?', "%#{params[:q]}%", "%#{params[:q]}%").order("date DESC")
 
-          @press_conferences = PressConference.joins(:organizator).where('press_conferences.title like ? OR press_conferences.address like ? OR organizators.name like ?', "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%").order("date DESC")
+          @press_conferences = PressConference.joins(:organizator).where('press_conferences.title like ? OR press_conferences.address like ? OR organizators.name like ?', "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%").where("date >= ?", DateTime.now.beginning_of_day).order("date DESC")
       else
-          @press_conferences = PressConference.where(status: "publicada").page(params[:page]).per(8).order("date DESC")
+          @press_conferences = PressConference.where(status: "publicada").where("date >= ?", DateTime.now.beginning_of_day).page(params[:page]).per(8).order("date DESC")
+
 
       end
 
@@ -20,7 +20,13 @@ class Users::PressConferencesController < ApplicationController
       @hash =Gmaps4rails.build_markers(@press_conference) do | press_conference, marker|
         marker.lat press_conference.latitude
         marker.lng press_conference.longitude
-    end
+
+      @solicitudes = @press_conference.solicituds
+      end
+
+      pressconference = PressConference.find(params[:id])
+      organizator = pressconference.organizator
+      @popularity = organizator.follows
   end
 
   def follow

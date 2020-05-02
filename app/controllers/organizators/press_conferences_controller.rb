@@ -1,5 +1,5 @@
 class Organizators::PressConferencesController < ApplicationController
-    
+
 
   def index
       @press_conferences = current_organizator.press_conferences
@@ -9,7 +9,6 @@ class Organizators::PressConferencesController < ApplicationController
       @press_conference = current_organizator.press_conferences.find(params[:id])
       @solicitudes = @press_conference.solicituds.includes(:user).order("created_at")
       #INCLUDES: Specify relationships to be included in the result set. En este caso permite acceder a USER
-
 
     end
 

@@ -13,7 +13,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
+
 
   </head>
 
@@ -22,6 +22,7 @@
     <%= render 'layouts/navbar', layout: false%>
 
     <% flash.each do |key, value| %>
+  
     <% if key == "notice"  %>
     <div class="alert alert-success">
       <%else  %>

@@ -17,10 +17,25 @@ after_create :create_user_profile
 
 accepts_nested_attributes_for :profile, update_only: true
 
+
+ def solicituds_vigentes
+   arr_ids = []
+   self.solicituds.each do |sol|
+      if sol.press_conference.date >= DateTime.now.beginning_of_day
+
+        arr_ids.push(sol.id)
+      end
+
+    end
+
+        Solicitud.where(id: arr_ids)
+ end
+
 private
 
 def create_user_profile
    create_profile! if profile.nil?
  end
+
 
 end

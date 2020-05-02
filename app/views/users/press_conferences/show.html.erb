@@ -1,48 +1,64 @@
-<div class="container-fluid">
+<div class="container-fluid altoMinimo">
   <div class="row">
     <div class="col-lg-2 col-md-4 p-2">
       <%= link_to "Volver a mis pautas", users_timeline_path, class: "btn btn-dark mt-1 btn-sm btn-block" %>
-      <%= link_to "Regresar a todas las pautas", users_press_conferences_path, class: "btn btn-info mt-1 btn-sm btn-block" %>
+      <%= link_to "Regresar a todas las pautas", users_press_conferences_path, class: "btn btn-dark mt-1 btn-sm btn-block" %>
+
       <% if @press_conference.organizator.is_followed_by_user?(current_user) %>
             <%= link_to "Dejar de serguir a #{@press_conference.organizator.name}", unfollow_users_press_conference_path(@press_conference), class: "btn btn-danger btn-sm btn-block" %>
           <% else %>
             <%= link_to "Seguir #{@press_conference.organizator.name}", follow_users_press_conference_path(@press_conference), class: "btn btn-success btn-sm btn-block" %>
       <% end %>
 
-
     </div>
-      <div class="col-lg-10 col-md-8">
+      <div class="col-lg-4 col-md-8">
         <h3><%= @press_conference.title %></h3>
-        <p><strong>Fecha y Hora : </strong><%= @press_conference.date.strftime("%d/%m%Y") %>  <strong> - </strong>  <%= @press_conference.time.strftime("%H:%M") %> </p>
-        <p><strong>Organiza : </strong><%= @press_conference.organizator.name %></p>
+        <hr>
+            <p><i class="fas fa-check"></i>   A la fecha <span class="badge badge-success"><%= @solicitudes.count %></span> usuarios han postulado a esta pauta.</p><hr>
+        <p><strong><i class="fas fa-calendar-day"></i> Fecha y Hora : </strong><%= @press_conference.date.strftime("%d/%m/%Y") %>  <strong> - </strong>  <%= @press_conference.time.strftime("%H:%M") %> </p>
+<div class="row">
+  <div class="col-6">
+    <span><strong><i class="fas fa-user"></i> Organiza : </strong><%=
+      @press_conference.organizator.name %></span>
+  </div>
+  <div class="col-6 polularidad">
+    <i class="fas fa-heart"></i><span><strong> ¿Cuántos usuarios siguen a <%= @press_conference.organizator.name %>: </strong><%= @popularity.size %></span>
+  </div>
+
+</div>
 
 
-        <p><strong>Resumen de la Pauta:  </strong></p>
-        <p><%= @press_conference.description %></p>
+        <hr>
+        <h6><strong>¿De qué se trata?  </strong></h6>
 
+        <p class="text-justify"><%= @press_conference.description %></p>
 
         <br>
 
-        <p><strong>Dirección: </strong><%= @press_conference.address %></p>
 
-        <div id="estilomapa">
-          <div id="map" style='width: 100%; height: 300px;'></div>
-        </div>
-        <br>
-        <br>
+      </div>
+
+      <div class="col-lg-4 col-md-8 p-2">
+
+                <p><strong><i class="fas fa-map-marker-alt"></i> La pauta se realizará en: </strong><%= @press_conference.address %></p>
+
+                <div id="estilomapa">
+                  <div id="map" style='width: 100%; height: 300px;'></div>
+                </div>
+                <br>
+                <br>
 
 
-        <script type="text/javascript">
+                <script type="text/javascript">
 
-            handler = Gmaps.build('Google');
-            handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-            markers = handler.addMarkers(<%=raw @hash.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-            handler.getMap().setZoom(16)
-          });
-
-        </script>
+                    handler = Gmaps.build('Google');
+                    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+                    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+                    handler.bounds.extendWith(markers);
+                    handler.fitMapToBounds();
+                    handler.getMap().setZoom(16)
+                  });
+                </script>
 
 
 

@@ -1,5 +1,10 @@
 
   window.addEventListener('turbolinks:load', function(){
+
+    setTimeout(function() {
+    $('.alert').fadeOut();
+  }, 600);
+
     let input = document.querySelector("input[name=q]");
     input.addEventListener("keyup", function(){
       $.ajax({
