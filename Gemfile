@@ -10,7 +10,7 @@ gem 'trix'
 gem 'kaminari'
 gem 'geocoder'
 gem 'gmaps4rails'
-
+gem 'activeadmin'
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'

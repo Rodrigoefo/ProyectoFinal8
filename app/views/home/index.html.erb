@@ -1,7 +1,7 @@
 
 <div class="container ">
   <div class="row">
-    <div class="col-xs-12 col-md-3 mt-5">
+    <div class="col-xs-12 col-md-3 mt-5 homeDesktop">
       <h5><mark>Últimas pautas publicadas</mark></h5>
 
       <% @press_conferences.each do |press_conference| %>
@@ -59,6 +59,27 @@
       </div>
     </div>
 
+  </div>
+  <div class="row m-3">
+    <div class="col-xs-12 homeMobile">
+      <h5><mark>Últimas pautas publicadas</mark></h5>
+
+      <% @press_conferences.each do |press_conference| %>
+      <div class="card">
+      <div class="fechaCard">
+        <span><%= press_conference.created_at.strftime("%d/%m/%Y")   %></span>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= press_conference.title %></h5>
+        <p class="card-text"><%= press_conference.description.truncate_words(40) %></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><i class="far fa-sm fa-clock"></i> Pauta creada hace <%= time_ago_in_words(press_conference.created_at) %></small>
+      </div>
+    </div>
+    <br>
+      <%end  %>
+    </div>
   </div>
 
 
