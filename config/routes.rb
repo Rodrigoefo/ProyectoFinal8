@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :contactmes
+
   root "home#index"
 
-  get 'home/contact', to: 'home#contact'
   get 'home/team', to: 'home#team'
   get 'home/about', to: 'home#about'
 

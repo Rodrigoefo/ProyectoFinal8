@@ -3,7 +3,7 @@
 
     setTimeout(function() {
     $('.alert').fadeOut();
-  }, 600);
+  }, 3000);
 
     let input = document.querySelector("input[name=q]");
     input.addEventListener("keyup", function(){

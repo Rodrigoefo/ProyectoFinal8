@@ -26,10 +26,13 @@ accepts_nested_attributes_for :profile, update_only: true
         arr_ids.push(sol.id)
       end
 
-    end
+      end
 
         Solicitud.where(id: arr_ids)
- end
+
+      end
+
+  
 
 private
 
