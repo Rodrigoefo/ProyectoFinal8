@@ -39,7 +39,8 @@ def unfollow
   @press_conference = PressConference.find(params[:id])
   follow = current_user.follows.find_by(organizator: @press_conference.organizator)
   follow.try(:destroy) #try invoca un método identificado por el símbolo y, si el receptor no responde al método, en lugar de romper la ejecucion del cíodigo y levantar un error, retorna un nil.
-  redirect_to users_press_conference_path(@press_conference)
+      redirect_to users_press_conference_path(@press_conference)
+
 end
 
 

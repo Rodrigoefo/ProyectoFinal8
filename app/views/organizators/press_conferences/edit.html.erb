@@ -1,52 +1,92 @@
+<div class="container-fluid altoMinimo">
+
+<div class="row mx-1">
+  <div class="col-lg-2 col-md-4 p-2" id="lateral">
+      <%= link_to "Volver a tu pautas", organizators_press_conferences_path, class: "btn btn-info btn-sm btn-block" %>
 
 
-<p>Edite de Pautas</p>
-<%= form_with(model: [:organizators, @press_conference], local: true) do |form| %>
-  <% if @press_conference.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@press_conference.errors.count, "error") %> prohibited this organizator from being saved:</h2>
+  </div>
+  <div class="col-lg-6">
+    <%= form_with(model: [:organizators, @press_conference], local: true) do |form| %>
+      <% if @press_conference.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@press_conference.errors.count, "error") %> prohibited this organizator from being saved:</h2>
 
-      <ul>
-      <% @press_conference.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @press_conference.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+      <div class="form-group">
+        <div class="control-label">
+          <%= form.label :title, "Título", :for => "validationCustom01" %>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+              </div>
+              <%= form.text_field :title, class: "form-control form-control-sm" , :id => "validationCustom01", :required => true %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
+            </div>
+          </div>
+        </div>
+      <div class="form-group">
+        <div class="control-label">
+          <%= form.label :description, "Descripción", :for => "validationCustom02" %>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
+              </div>
+              <%= form.text_area :description, class: "form-control form-control-sm" , :id => "validationCustom02", :required => true %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="field">
+        <%= form.label :date, "Fecha" %>
+        <%= form.date_select :date %>
+      </div>
+
+      <div class="field">
+        <%= form.label :time, "Hora" %>
+        <%= form.time_select :time %>
+      </div>
+
+      <div class="form-group">
+        <div class="control-label">
+          <%= form.label :address, "Dirección", :for => "validationCustom03" %>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id=""><i class="fas fa-map-marker-alt"></i></span>
+              </div>
+              <%= form.text_field :address, class: "form-control form-control-sm" , :id => "validationCustom03", :required => true %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="field">
+        <%= form.label :status, "Estado de la pauta" %>
+        <%= form.select :status, PressConference.statuses.keys, {}, class: "custom-select custom-select-sm " %>
+
+
+      </div>
+      <br>
+
+      <div class="actions">
+        <%= form.submit "Actualizar", class: "btn btn-info"  %>
+      </div>
+      <br>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.time_select :time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.select :status, PressConference.statuses.keys, {} %>
-
-
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+ </div>
+</div>

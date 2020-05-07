@@ -1,14 +1,14 @@
 <div class="container-fluid altoMinimo">
 
   <div class="row mx-1">
-      <div class="col-lg-2 col-md-4 p-2">
+      <div class="col-lg-2 p-2" id="lateral">
         <h5 class="perfil"><mark>Edita tu Perfil</mark></h5>
 
       <p><%= link_to "Regresar a tus pautas", organizators_press_conferences_path, class: "btn btn-info btn-sm btn-block" %></p>
 
     </div>
 
-    <div class="col-lg-10 col-md-8">
+    <div class="col-lg-6">
       <%= form_for current_organizator, url: organizators_profile_show_path, html: {novalidate: true, class: 'needs-validation'} do |form| %>
         <% if current_organizator.errors.any? %>
             <% current_organizator.errors.full_messages.each do |msg| %>
@@ -17,7 +17,7 @@
         <% end %>
         <div class="col">
           <div class="form-group">
-            <div class="control-label ">
+            <div class="control-label">
               <%= form.label :name, "Nombre", :for => "validationCustom01" %>
               <div class="input-group">
                   <div class="input-group-prepend">

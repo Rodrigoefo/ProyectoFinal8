@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <%= wicked_pdf_stylesheet_link_tag "estilopdf" %>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pauta: "<%= @press.title%>"</h1>
+      <hr>
+      <h4>Lista de comunicadores aceptados:</h4>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre del Comunicador</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th>Tipo de Comunicador</th>
+            <th>Nombre del medio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @lista.each do |list| %>
+          <tr>
+            <td><%= list.user.name %> <%= list.user.lastname %></td>
+            <td><%= list.user.profile.phone %></td>
+            <td><%= list.user.email %></td>
+            <td><%= list.user.user_type %></td>
+            <% if list.user.profile.media_name.present?  %>
+                <td><%= list.user.profile.media_name %></td>
+            <% elsif list.user.profile.social_network.present?%>
+                <td><%= list.user.profile.social_network %></td>
+            <%else %>
+                <span>Freelance</span>
+            <% end %>
+          </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+
+  </body>
+</html>

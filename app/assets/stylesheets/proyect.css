@@ -2,6 +2,21 @@ body {
   font-size: 14px;
 }
 
+.enlaceoff {
+  text-decoration: none;
+  color: black;
+}
+
+.fa-file-pdf{
+  color: red;
+}
+
+#lateral{
+  background-color: #f2f1f0;
+  border-radius: 5px;
+  padding-top: 8px;
+}
+
 .altoMinimo{
   min-height: 60vh;
 }
@@ -22,8 +37,10 @@ body {
 .fa-heart{
 color: red;
 }
-
-
+/*
+div {
+    border: 1px solid red;
+} */
 
 .jumbotron {
   margin-top: 10px;
@@ -145,6 +162,11 @@ color: green;
   min-height: 90px;
 
 }
+
+.colorNav{
+  background-color: #0d2536;
+}
+
 .nav-link{
   color: grey;
 }
@@ -171,6 +193,7 @@ thead {
 
 th.celda {
   width: 25%;
+  color: white!important;
 }
 
 .avatar {
@@ -300,6 +323,10 @@ th.celda {
    display: none;
  }
 
+ .anchoFooter{
+   max-width: 80%!important;
+ }
+
  /* Media Queries */
 
  @media (max-width: 767px) {
@@ -329,9 +356,12 @@ th.celda {
       margin-top: 15px;
       padding-left: 35px;
 
+
+
     }
     .footer2{
       margin-top: 15px;
+
 
     }
 

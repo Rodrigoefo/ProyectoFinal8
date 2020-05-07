@@ -8,13 +8,13 @@ class Profile < ApplicationRecord
 
   def is_completed
     if user.tradicional?
-        if phone.empty? || media_name.empty?
+        if phone.nil? || media_name.nil?
           return false
         else
           return true
         end
     else user.influencer?
-        if phone.empty? || social_network.empty? || social_network_url.empty?
+        if phone.nil? || social_network.nil? || social_network_url.nil?
           return false
         else
           return true

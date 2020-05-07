@@ -1,15 +1,25 @@
 <div class="container-fluid altoMinimo">
-  <h5><mark>¿Quienes han postulado a la pauta:</mark> <strong><%= @press_conference.title %></strong>?</h5>
-  <br>
+  <h5>¿Quienes han postulado a la pauta: <strong><%= @press_conference.title %></strong>?</h5>
+  <hr>
+  <div class="d-flex justify-content-end">
+    <p><i class="far fa-lg fa-file-pdf"></i> <small><%= link_to " Descargar listado de postulantes aceptados", organizators_press_conference_listaPostulantes_path(@press_conference.id), class: "enlaceoff"%></small>
+    </p>
+
+  </div>
+
+
+
   <div class="table-responsive-sm">
     <table class="table table-striped">
     <thead class="bg-danger">
     <tr>
 
       <th>Nombre del Postulante</th>
-      <th>Email Postulante</th>
+      <th>Email</th>
+      <th>Teléfono</th>
       <th>Postulación realiza el</th>
       <th>Sobre el postulante</th>
+      <th>Estado de la postulación</th>
 
 
       <th colspan="3"></th>
@@ -21,6 +31,7 @@
       <tr>
         <td><%= solicitud.user.name %> <%= solicitud.user.lastname %></td>
         <td><%= solicitud.user.email %></td>
+        <td><%= solicitud.user.profile.phone %></td>
         <td><%= solicitud.created_at.strftime("%d/%m/%Y") %></td>
         <td><%= link_to organizators_user_path(solicitud.user, press_conference_id: solicitud.press_conference.id) do %>
           <i class="fas fa-lg fa-user"></i>

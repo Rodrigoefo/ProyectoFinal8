@@ -51,6 +51,23 @@ class Organizators::PressConferencesController < ApplicationController
             redirect_to organizators_press_conferences_path
     end
 
+    def listaPostulantes
+      @press = PressConference.find(params[:press_conference_id])
+      @lista = @press.solicituds.where(status: "accepted")
+      respond_to do |format|
+        format.html
+        format.json
+        format.pdf do
+          render template: '/organizators/press_conferences/listaPostulantes',
+          pdf: 'listaPostulantes',
+
+          disposition: 'attachment'
+          # type: 'apllication/pdf'
+
+       end
+      end
+    end
+
 
     private
 

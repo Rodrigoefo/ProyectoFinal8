@@ -39,7 +39,9 @@ Rails.application.routes.draw do
           get 'profile/edit'
           patch 'profile/:id', to: 'profile#update'
 
-          resources :press_conferences
+          resources :press_conferences  do
+            get :listaPostulantes, format: 'pdf'
+          end
           resources :users, only: :show
           resources :solicitudes, only: [:update, :show]
 
