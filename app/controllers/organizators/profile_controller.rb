@@ -3,6 +3,12 @@ class Organizators::ProfileController < ApplicationController
   end
 
   def show
+    @organizatorPolarity = current_organizator.follows.size
+
+    @press_conferences = current_organizator.press_conferences.where(status: ["publicada", "borrador"]).limit(5)
+    @press_conferencesCerradas = current_organizator.press_conferences.where(status: "cerrada").limit(5)
+
+
   end
 
   def edit

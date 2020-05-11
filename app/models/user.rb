@@ -21,7 +21,7 @@ accepts_nested_attributes_for :profile, update_only: true
  def solicituds_vigentes
    arr_ids = []
    self.solicituds.each do |sol|
-      if sol.press_conference.date >= DateTime.now.beginning_of_day
+      if sol.press_conference.date >= DateTime.now.beginning_of_day && sol.press_conference.status == "publicada"
 
         arr_ids.push(sol.id)
       end
@@ -30,9 +30,9 @@ accepts_nested_attributes_for :profile, update_only: true
 
         Solicitud.where(id: arr_ids)
 
-      end
+  end
 
-  
+
 
 private
 

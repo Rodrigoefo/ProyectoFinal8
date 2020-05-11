@@ -5,10 +5,12 @@ class Solicitud < ApplicationRecord
   enum status: [:in_progress, :accepted, :rejected]
 
 def status_disponibles
-  
+
     Solicitud.statuses.keys - [status]
 
 end
+
+
 
 
 end

@@ -50,9 +50,7 @@
 
         <td>
           <% if press_conference.has_solicitud(current_user)%>
-
                       <td>Ya postulaste</td>
-
              <% else %>
                  <% if current_user.profile.is_completed  %>
                      <td><%= link_to "Postular", solicitar_users_press_conference_path(press_conference), class: "btn btn-outline-secondary btn-sm"  %></td>
@@ -60,11 +58,10 @@
                     <td>Debes llenar tu perfil primero</td>
              <%end  %>
            <%end  %>
-
-
     </tr>
   <% end %>
   </tbody>
+
   </table>
 </div>
 
@@ -72,5 +69,5 @@
 <span class="float-right"> <%=paginate @press_conferences%></span>
 <% end  %>
 
-<%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-outline-danger mb-2" %>
+<%= link_to "Regresar a tus pautas", users_timeline_path, class: "btn btn-danger mb-2" %>
 </div>

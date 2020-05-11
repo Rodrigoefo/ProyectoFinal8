@@ -1,6 +1,10 @@
 
   window.addEventListener('turbolinks:load', function(){
 
+    $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+    })
+
     setTimeout(function() {
     $('.alert').fadeOut();
   }, 3000);

@@ -13,12 +13,18 @@ class Profile < ApplicationRecord
         else
           return true
         end
-    else user.influencer?
+    elsif user.influencer?
         if phone.nil? || social_network.nil? || social_network_url.nil?
           return false
         else
           return true
         end
+      end
+    else user.freelance?
+      if phone.nil? || description.nil?
+        return false
+      else
+        return true
       end
   end
 

@@ -23,4 +23,6 @@ class PressConference < ApplicationRecord
   end
 
 
+
+
 end

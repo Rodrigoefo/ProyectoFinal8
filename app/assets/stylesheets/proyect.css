@@ -2,6 +2,55 @@ body {
   font-size: 14px;
 }
 
+@-webkit-keyframes ring {
+  0% { -webkit-transform: rotateZ(0); }
+  1% { -webkit-transform: rotateZ(30deg); }
+  3% { -webkit-transform: rotateZ(-28deg); }
+  5% { -webkit-transform: rotateZ(34deg); }
+  7% { -webkit-transform: rotateZ(-32deg); }
+  9% { -webkit-transform: rotateZ(30deg); }
+  11% { -webkit-transform: rotateZ(-28deg); }
+  13% { -webkit-transform: rotateZ(26deg); }
+  15% { -webkit-transform: rotateZ(-24deg); }
+  17% { -webkit-transform: rotateZ(22deg); }
+  19% { -webkit-transform: rotateZ(-20deg); }
+  21% { -webkit-transform: rotateZ(18deg); }
+  23% { -webkit-transform: rotateZ(-16deg); }
+  25% { -webkit-transform: rotateZ(14deg); }
+  27% { -webkit-transform: rotateZ(-12deg); }
+  29% { -webkit-transform: rotateZ(10deg); }
+  31% { -webkit-transform: rotateZ(-8deg); }
+  33% { -webkit-transform: rotateZ(6deg); }
+  35% { -webkit-transform: rotateZ(-4deg); }
+  37% { -webkit-transform: rotateZ(2deg); }
+  39% { -webkit-transform: rotateZ(-1deg); }
+  41% { -webkit-transform: rotateZ(1deg); }
+
+  43% { -webkit-transform: rotateZ(0); }
+  100% { -webkit-transform: rotateZ(0); }
+}
+
+.modal-header{
+  background-color: #0d2536;
+  color: white;
+
+}
+
+.bell{
+  display:block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  /* margin:50px auto 0; */
+  color: red;
+  -webkit-animation: ring 4s .7s ease-in-out infinite;
+  -webkit-transform-origin: 50% 4px;
+  -moz-animation: ring 4s .7s ease-in-out infinite;
+  -moz-transform-origin: 50% 4px;
+  animation: ring 4s .7s ease-in-out infinite;
+  transform-origin: 50% 4px;
+}
+
 .enlaceoff {
   text-decoration: none;
   color: black;
@@ -11,10 +60,25 @@ body {
   color: red;
 }
 
+.bg-info{
+  background-color: #0d2536!important;
+}
+.barra{
+  border-left: 5px solid grey;
+  padding-left: 10px;
+}
+
 #lateral{
   background-color: #f2f1f0;
   border-radius: 5px;
-  padding-top: 8px;
+  padding-top: 12px;
+}
+#lateralblue{
+  background-color: #0d2536;
+  border-radius: 5px;
+  padding-top: 12px;
+  color: white;
+  margin-bottom: 12px;
 }
 
 .altoMinimo{
@@ -37,8 +101,8 @@ body {
 .fa-heart{
 color: red;
 }
-/*
-div {
+
+/* div {
     border: 1px solid red;
 } */
 
@@ -69,6 +133,16 @@ div {
   background-size: contain;
   background-repeat: no-repeat;
   /* border: 2px solid #d6d2d2; */
+  border-radius: 14px;
+  margin-bottom: 40px;
+}
+
+.imgCV {
+  background-color: white;
+  background-image: url("CVPerson.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
   border-radius: 14px;
   margin-bottom: 40px;
 }

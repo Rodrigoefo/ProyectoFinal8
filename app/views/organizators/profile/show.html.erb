@@ -3,22 +3,98 @@
 
   <div class="row mx-1">
     <div class="col-lg-2 col-md-4 p-2" id="lateral">
-      <h5><mark>Perfil de <%= current_organizator.name %></mark></h5><br>
+
       <%= link_to "Crear una pauta", new_organizators_press_conference_path, class: "btn btn-sm btn-secondary btn-block" %>
       <%= link_to "Regresar a tus pautas", organizators_press_conferences_path, class: "btn btn-sm btn-info btn-block" %>
+      <hr>
+
 
 
     </div>
 
     <div class="col-lg-10 col-md-8">
+      <div class="row">
+        <div class="col-xs-12 col-lg-6">
+          <h2><%= current_organizator.name%> </h2>
+        </div>
+        <div class="col-xs-12 col-lg-6">
 
-      <ul>
-        <li><%= current_organizator.name%> </li>
-        <li><%= current_organizator.phone %></li>
-        <li><%= current_organizator.description %></li>
-        <li><%= current_organizator.address %></li>
-      </ul>
+        </div>
+      </div>
 
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-lg-6">
+          <p><strong><i class="fas fa-phone-alt"></i> Dirección: </strong><%= current_organizator.address %></p>
+          <p><strong><i class="fas fa-map-marker-alt"></i> Teléfono: </strong><%= current_organizator.phone %></p>
+        </div>
+        <div class="col-xs-12 col-lg-6">
+          <h3><i class="fas fa-heart"></i> Ya te siguen <%= @organizatorPolarity %> comunicadores</h3>
+        </div>
+
+      </div>
+
+        <hr>
+        <div class="barra">
+          <div class="row">
+            <div class="col-xs-12 col-lg-6">
+                <p><%= current_organizator.description %></p>
+            </div>
+            <div class="col-xs-12 col-lg-6">
+              <table class="table">
+                <tr class="bg-info text-light">
+                  <th>Últimas pautas creadas</th>
+                  <th>Estado</th>
+                </tr>
+                <% @press_conferences.each do |press| %>
+                <tr>
+                  <td><i class="fas fa-newspaper"></i><strong> <%=press.title%> </strong> <%=link_to "(editar) ",  edit_organizators_press_conference_path(press), class: "text-muted"%></td>
+                  <td><%=press.status %></td>
+                </tr>
+                <%end%>
+              </table>
+              <br>
+              <table class="table">
+                <tr class="bg-info text-light">
+                  <th>Pautas cerradas</th>
+
+                </tr>
+                <% @press_conferencesCerradas.each do |press| %>
+                <tr>
+                  <td><i class="fas fa-newspaper"></i><strong> <%=press.title%> </strong> <%=link_to "(editar) ",  edit_organizators_press_conference_path(press), class: "text-muted"%> <a href="#" data-toggle="modal" data-target="#exampleModalScrollable" class="text-muted">( Postulantes aceptados )</a> </td>
+                </tr>
+<!-- MODAL -->
+                <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle"><%= press.title %></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p><i class="fas fa-calendar-alt"></i> Se realizó el <strong><%= press.date %></strong> en <strong><%=press.address  %></strong></p>
+                        <p><strong>Fueron aceptados a esta pauta:</strong></p><hr>
+
+                          <% press.solicituds.each do |u|  %>
+                          <p><i class="fas fa-user-check"></i> <%= u.user.name %> <%= u.user.lastname %> | <%= u.user.email %> | <%= u.user.profile.phone %>
+                            <%end  %>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<!-- FIN MODAL -->
+                <%end%>
+              </table>
+
+            </div>
+
+        </div>
     </div>
 
   </div>

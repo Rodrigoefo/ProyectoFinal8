@@ -10,7 +10,6 @@
 
       </div>
 
-
       <p class="pbar">Bienvenido <%= current_user.name %></p>
 
 
@@ -42,7 +41,8 @@
         <th>Hora</th>
         <th>Dónde</th>
         <th>Organizador</th>
-        <th colspan="3"></th>
+        <th colspan="2"></th>
+        <th>¿Cuánto falta?</th>
       </tr>
     </thead>
 
@@ -64,9 +64,14 @@
             <i class="far fa-lg fa-trash-alt"></i>
             <%end%>
           </td>
-
+              <td colspan="5" class="d-flex justify-content-star">Falta
+                  <% if (DateTime.now > solicitud.press_conference.date - 1.day) %>
+                    <%= distance_of_time_in_words(solicitud.press_conference.date, DateTime.now)%><span class="bell fa fa-bell"> </span>
+                    <%else  %>
+                   <%=distance_of_time_in_words(solicitud.press_conference.date, DateTime.now)%>
+                   <%end %>
+                  </td>
         </tr>
-
     <% end %>
       </tbody>
   </table>

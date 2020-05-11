@@ -2,7 +2,7 @@ class Organizators::PressConferencesController < ApplicationController
 
 
   def index
-      @press_conferences = current_organizator.press_conferences
+      @press_conferences = current_organizator.press_conferences.where(status: ["publicada", "borrador"]).order("date ASC" )
   end
 
     def show

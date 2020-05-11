@@ -12,6 +12,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'activeadmin'
 gem 'wicked_pdf'
+gem 'cancancan'
 
 
 gem 'jquery-rails'
