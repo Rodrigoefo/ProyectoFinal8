@@ -9,12 +9,12 @@ class Users::PressConferencesController < ApplicationController
   def index
 
       if params[:q].present?
-      
+
               @press_conferences = PressConference.joins(:organizator).where('press_conferences.title like ? OR press_conferences.address like ? OR organizators.name like ?', "%#{params[:q]}%", "%#{params[:q]}%", "%#{params[:q]}%").where("date >= ?", DateTime.now.beginning_of_day).order("date ASC")
 
 
       else
-          @press_conferences = PressConference.where(status: "publicada").where("date >= ?", DateTime.now.beginning_of_day).page(params[:page]).per(8).order("date ASC")
+              @press_conferences = PressConference.where(status: "publicada").where("date >= ?", DateTime.now.beginning_of_day).page(params[:page]).per(8).order("date ASC")
 
       end
   end

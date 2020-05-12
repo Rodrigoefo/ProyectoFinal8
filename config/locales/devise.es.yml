@@ -243,4 +243,8 @@ es:
     order:
     - :day
     - :month
-    - :year    
+    - :year
+  time:
+    formats:
+      long: '%A, %B %d, %Y'
+      short: '%b %d, %Y'
