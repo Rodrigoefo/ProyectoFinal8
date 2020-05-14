@@ -30,7 +30,7 @@
             </tr>
           <tr class="thead-light">
             <th class="celda bg-info">( <i class="fas fa-map-marker-alt"></i> ) Dirección Red Social</th>
-              <td> <a href="<%=@profile.social_network_url %>" target="_blank"><%=@suscriptores %></a></td>
+              <td> <a href="<%=@profile.social_network_url %>" target="_blank"><i class="fab fa-3x fa-youtube colorRedSocial"></i></a></td>
           </tr>
           <%end%>
 
@@ -44,7 +44,7 @@
 
         </tbody>
       </table>
-    
+
       <div class="row text-justify">
         <div class="col-sm-12">
         <p><%= sanitize @profile.description %></p>

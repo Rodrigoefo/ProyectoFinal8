@@ -1,8 +1,8 @@
 
 <div class="container-fluid">
   <div class="row">
-      <div class=" col-xs-12 col-md-4 col-lg-2 " id="lateral">
-        <h5 class="perfil"><mark>Edita tu Perfil</mark></h5>
+      <div class=" col-xs-12 col-md-4 col-lg-2" id="lateral">
+        <h5 class="perfil"><i class="fas fa-edit"></i> Edita tu Perfil</h5>
       <% if current_user.profile.photo_url %>
       <p><%= image_tag current_user.profile.photo_url, class: "avatar", size: "185x185" %></p>
       <% end %>

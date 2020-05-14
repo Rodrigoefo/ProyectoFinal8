@@ -1,14 +1,14 @@
 <div class="container-fluid altoMinimo">
   <div class="row">
-    <div class="col-lg-2 p-2">
+    <div class="col-lg-2 p-2 borderProfile">
       <% if @user.profile.photo_url %>
       <p><%= image_tag @user.profile.photo_url, class: "avatar", size: "185x185" %></p>
       <% end %>
       <h4><%= @user.name %> <%= @user.lastname%></h4>
       <br>
 
-      <%= link_to "Regresar a la solicitud:  #{@press_conference.title}", organizators_press_conference_path(@press_conference), class: "btn btn-dark btn-block btn-sm" %>
-      <%= link_to "Regresar a pautas", organizators_press_conferences_path, class: "btn btn-dark btn-block btn-sm" %>
+      <%= link_to "Regresar a la solicitud:  #{@press_conference.title}", organizators_press_conference_path(@press_conference), class: "btn btn-block btn-sm btn-dark  " %>
+      <%= link_to "Ver todas tus pautas", organizators_press_conferences_path, class: "btn btn-secondary btn-block btn-sm text-white" %>
 
     </div>
 
@@ -27,12 +27,16 @@
 
           <% if @user.influencer?%>
           <tr class="thead-light">
+            <th class="celda bg-info"> Tipo de comunicador</th>
+              <td> <%= @user.user_type %></td>
+            </tr>
+          <tr class="thead-light">
             <th class="celda bg-info"> Red Social</th>
               <td> <%= @user.profile.social_network %></td>
             </tr>
           <tr class="thead-light">
             <th class="celda bg-info"> Dirección Red Social</th>
-              <td> <a href="<%=@user.profile.social_network_url %>" target="_blank"><%=@user.profile.social_network_url %></a></td>
+              <td> <a href="<%=@user.profile.social_network_url %>" target="_blank"><i class="fab fa-3x fa-youtube colorRedSocial"></i></a></td>
           </tr>
           <%end%>
 
@@ -40,6 +44,12 @@
           <tr class="thead-light">
             <th class="celda bg-info"> Medio donde trabaja</th>
               <td> <%= @user.profile.media_name %></td>
+          </tr>
+          <%end %>
+          <%if @user.freelance? %>
+          <tr class="thead-light">
+            <th class="celda bg-info"> Tipo de Comunicador</th>
+              <td> <%= @user.user_type%></td>
           </tr>
           <%end %>
 
@@ -53,6 +63,9 @@
 
       </div>
 
+
+    </div>
+    <div class="col-lg-4 imgCV">
 
     </div>
 

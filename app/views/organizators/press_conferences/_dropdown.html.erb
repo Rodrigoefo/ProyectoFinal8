@@ -2,12 +2,12 @@
 
 <button class="btn btn-<%= color %> dropdown-toggle" type="button" id="changeStatus-<%= solicitud.id %>" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <!--cualquier .btn puede ser transformado en un dropdown. Primero es necesario añadir la clase dropdownm-toogle  -->
-  <%= solicitud.status %>
+  <%= solicitud.current_status_text %>
 </button>
 
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
   <% solicitud.status_disponibles.each do |new_status| %>
-    <%= link_to new_status, organizators_solicitude_path(solicitud, status: new_status), method: :put, class: "dropdown-item", remote: true %>
+    <%= link_to Solicitud::STATUS_TEXT[new_status], organizators_solicitude_path(solicitud, status: new_status), method: :put, class: "dropdown-item", remote: true %>
   <% end %>
 </div>
 <!--"remote: true" en un link hace el llamado vía AJAX  -->

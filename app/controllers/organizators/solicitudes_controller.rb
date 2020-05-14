@@ -6,10 +6,11 @@ class Organizators::SolicitudesController < ApplicationController
      @solicitud.update(status: params[:status])
 
      if @solicitud.accepted?
-       OrganizatorMailer.with(organizator: current_organizator, user: @solicitud.user).solicitud_confirmation.deliver_now
+       OrganizatorMailer.with(organizator: current_organizator, user: @solicitud.user, press_conference: @solicitud.press_conference).solicitud_confirmation.deliver_now
      elsif @solicitud.rejected?
-        OrganizatorMailer.with(organizator: current_organizator, user: @solicitud.user).solicitud_rejected.deliver_now
+        OrganizatorMailer.with(organizator: current_organizator, user: @solicitud.user, press_conference: @solicitud.press_conference).solicitud_rejected.deliver_now
      end
+     
      respond_to do |format|
        format.html do
          redirect_to organizators_press_conference_path(@solicitud.press_conference)

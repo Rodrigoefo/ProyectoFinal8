@@ -148,8 +148,20 @@ color: red;
   border-radius: 14px;
   margin-bottom: 40px;
 }
+.editarProOrg {
+  background-color: white;
+  background-image: url("editandoOrg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border: 2px solid red; */
+  border-radius: 14px;
+  margin-bottom: 40px;
+}
 
 
+.colorBoton{
+  background-color: #253629;
+}
 
 .bordes {
   border: 1px solid grey;
@@ -157,7 +169,17 @@ color: red;
   padding-bottom: 10px;
 }
 
+.borderProfile{
+ border: 2px solid grey;
+ border-radius: 4px;
+ padding: 5px;
+ margin-bottom: 5px;
 
+}
+
+.colorRedSocial{
+  color: red;
+}
 
 .maxalto1{
 height: 60vh;
