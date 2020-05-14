@@ -12194,7 +12194,7 @@ trix-editor .attachment progress {
   border-radius: 5px;
 }
 
-/* line 1, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 1, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 body {
   font-size: 14px;
 }
@@ -12273,13 +12273,13 @@ body {
     -webkit-transform: rotateZ(0);
   }
 }
-/* line 35, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 35, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .modal-header {
   background-color: #0d2536;
   color: white;
 }
 
-/* line 41, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 41, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .bell {
   display: block;
   width: 40px;
@@ -12295,36 +12295,36 @@ body {
   transform-origin: 50% 4px;
 }
 
-/* line 56, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 56, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .enlaceoff {
   text-decoration: none;
   color: black;
 }
 
-/* line 61, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 61, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .fa-file-pdf {
   color: red;
 }
 
-/* line 65, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 65, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .bg-info {
   background-color: #0d2536 !important;
 }
 
-/* line 68, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 68, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .barra {
   border-left: 5px solid grey;
   padding-left: 10px;
 }
 
-/* line 73, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 73, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 #lateral {
   background-color: #f2f1f0;
   border-radius: 5px;
   padding-top: 12px;
 }
 
-/* line 78, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 78, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 #lateralblue {
   background-color: #0d2536;
   border-radius: 5px;
@@ -12333,32 +12333,32 @@ body {
   margin-bottom: 12px;
 }
 
-/* line 86, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 86, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .altoMinimo {
   min-height: 60vh;
 }
 
-/* line 89, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 89, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .contacto {
   min-height: 60vh;
 }
 
-/* line 92, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 92, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .team {
   min-height: 60vh;
 }
 
-/* line 95, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 95, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .about {
   min-height: 60vh;
 }
 
-/* line 99, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 99, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 #estilomapa {
   width: 610px;
 }
 
-/* line 103, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 103, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .fa-heart {
   color: red;
 }
@@ -12366,7 +12366,7 @@ body {
 /* div {
     border: 1px solid red;
 } */
-/* line 111, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 111, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .jumbotron {
   margin-top: 10px;
   padding: 10px;
@@ -12376,7 +12376,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* line 122, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 122, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .jumbotron2 {
   background-color: white;
   background-image: url("camara.jpg");
@@ -12386,7 +12386,7 @@ body {
   border-radius: 14px;
 }
 
-/* line 132, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 132, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .jumbotron3 {
   background-color: white;
   background-image: url("noticiasLector.jpg");
@@ -12397,10 +12397,10 @@ body {
   margin-bottom: 40px;
 }
 
-/* line 142, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 142, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .imgCV {
   background-color: white;
-  background-image: url("CVPerson.jpg");
+  background-image: url(/assets/CVPerson-c48276de3dfe8bfbff0b7caf7a6da23c108656a0e1e199407f0a2735d5406ca5.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   /* border: 2px solid red; */
@@ -12408,7 +12408,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* line 151, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 151, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .editarProOrg {
   background-color: white;
   background-image: url("editandoOrg.jpg");
@@ -12419,19 +12419,19 @@ body {
   margin-bottom: 40px;
 }
 
-/* line 162, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 162, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .colorBoton {
   background-color: #253629;
 }
 
-/* line 166, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 166, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .bordes {
   border: 1px solid grey;
   border-radius: 10px;
   padding-bottom: 10px;
 }
 
-/* line 172, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 172, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .borderProfile {
   border: 2px solid grey;
   border-radius: 4px;
@@ -12439,12 +12439,12 @@ body {
   margin-bottom: 5px;
 }
 
-/* line 180, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 180, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .colorRedSocial {
   color: red;
 }
 
-/* line 184, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 184, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto1 {
   height: 60vh;
   background-image: url("noticias2.jpeg");
@@ -12454,7 +12454,7 @@ body {
   background-position: center;
 }
 
-/* line 193, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 193, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto5 {
   height: 60vh;
   background-image: url("createPress.jpeg");
@@ -12464,17 +12464,17 @@ body {
   background-position: center;
 }
 
-/* line 204, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 204, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto2 {
   padding-top: 5%;
 }
 
-/* line 208, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 208, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto6 {
   margin-bottom: 15px;
 }
 
-/* line 212, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 212, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto3 {
   height: 60vh;
   background-image: url("hombredenegocios2b.jpg");
@@ -12484,22 +12484,22 @@ body {
   background-position: center;
 }
 
-/* line 223, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 223, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto4 {
   padding-top: 5%;
 }
 
-/* line 229, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 229, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .fa-sitemap {
   color: green;
 }
 
-/* line 234, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 234, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .fa-microphone {
   color: green;
 }
 
-/* line 238, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 238, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .form_layout {
   width: 50%;
   margin: auto;
@@ -12509,117 +12509,117 @@ body {
   border-radius: 4px;
 }
 
-/* line 248, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 248, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .backSessionUser {
   background-image: url(./Journalist.jpg);
   background-size: cover;
   height: 100vh;
 }
 
-/* line 254, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 254, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .active {
   background-color: grey !important;
   border: 1px solid grey !important;
 }
 
-/* line 259, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 259, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .navbar {
   min-height: 90px;
 }
 
-/* line 264, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 264, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .colorNav {
   background-color: #0d2536;
 }
 
-/* line 268, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 268, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .nav-link {
   color: grey;
 }
 
-/* line 271, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 271, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .nav-link:hover {
   color: white;
 }
 
-/* line 275, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 275, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .nav-item:hover {
   border-bottom: 1px solid grey;
 }
 
-/* line 279, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 279, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 mark {
   background-color: #494d52;
   color: white;
 }
 
-/* line 284, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 284, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .sombra_box {
   box-shadow: 2px 2px 5px #999;
 }
 
-/* line 288, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 288, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 thead {
   color: white;
 }
 
-/* line 292, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 292, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 th.celda {
   width: 25%;
   color: white !important;
 }
 
-/* line 297, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 297, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .avatar {
   border-radius: 5%;
 }
 
-/* line 301, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 301, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .trix-content {
   height: 150px !important;
   max-height: 150px !important;
   overflow-y: auto !important;
 }
 
-/* line 307, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 307, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .navbar {
   min-height: 80px;
 }
 
-/* line 311, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 311, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .navbar-brand {
   font-size: 2em;
 }
 
-/* line 315, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 315, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .btn-width {
   min-width: 115px;
   border-color: #cccccc;
 }
 
-/* line 321, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 321, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 i.fa-trash-alt {
   color: red;
 }
 
-/* line 324, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 324, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 i.fa-edit {
   color: green;
 }
 
-/* line 327, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 327, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 i.fa-eye {
   color: gray;
 }
 
-/* line 330, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 330, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 i.fa-user {
   color: gray;
   margin: auto;
 }
 
 /*  Card Home styles*/
-/* line 339, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 339, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .fechaCard {
   background-color: red;
   color: white;
@@ -12631,7 +12631,7 @@ i.fa-user {
   left: -10px;
 }
 
-/* line 351, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 351, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .fechaCard-texto {
   color: grey;
   width: 75px;
@@ -12644,41 +12644,41 @@ i.fa-user {
   border: 1px solid rgba(128, 128, 128, 0.5);
 }
 
-/* line 364, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 364, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .card-body {
   padding: 5px;
 }
 
-/* line 369, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 369, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .card-text {
   font-size: 0.9em;
 }
 
-/* line 373, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 373, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .card-footer {
   padding-right: 5px;
   padding-bottom: 5px;
 }
 
-/* line 379, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 379, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .card-title {
   font-weight: bold;
   font-size: 1.2em;
 }
 
-/* line 384, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 384, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .card-img-top {
   min-height: 100px;
 }
 
 /*  Pagination styles*/
-/* line 390, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 390, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .pagination > li > a {
   background-color: white;
   color: #343a40;
 }
 
-/* line 396, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 396, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > span:focus,
@@ -12688,64 +12688,64 @@ i.fa-user {
   border-color: #ddd;
 }
 
-/* line 406, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 406, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .pagination > .active > a {
   color: white;
   background-color: #6c757d !Important;
   border: solid 1px #6c757d !Important;
 }
 
-/* line 413, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 413, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .pagination > .active > a:hover {
   background-color: #6c757d !Important;
   border: solid 1px #6c757d;
 }
 
-/* line 420, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 420, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .homeMobile {
   display: none;
 }
 
-/* line 424, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+/* line 424, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .anchoFooter {
   max-width: 80% !important;
 }
 
 /* Media Queries */
 @media (max-width: 767px) {
-  /* line 432, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 432, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .homeMobile {
     display: block;
   }
 
-  /* line 436, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 436, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .homeDesktop {
     display: none;
   }
 
-  /* line 442, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 442, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .card-footer {
     display: none;
   }
 
-  /* line 446, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 446, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .jumbotron {
     background-color: white;
     width: 100%;
   }
 
-  /* line 453, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 453, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .footer {
     margin-top: 15px;
     padding-left: 35px;
   }
 
-  /* line 460, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 460, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .footer2 {
     margin-top: 15px;
   }
 
-  /* line 468, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 468, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .form_layout {
     width: 100%;
     margin: auto;
@@ -12754,29 +12754,29 @@ i.fa-user {
     border-radius: 4px;
   }
 
-  /* line 476, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 476, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   #estilomapa {
     width: 100% !important;
   }
 
-  /* line 480, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 480, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .maxalto1 {
     height: 0;
     width: 100%;
   }
 
-  /* line 486, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 486, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .maxalto2 {
     padding-top: 0;
   }
 
-  /* line 490, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 490, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .maxalto3 {
     height: 0;
     width: 100%;
   }
 
-  /* line 496, /home/refo/proyecto8/app/assets/stylesheets/proyect.css */
+  /* line 496, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
   .maxalto4 {
     padding-top: 0;
   }
