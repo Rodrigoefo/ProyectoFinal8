@@ -12379,7 +12379,7 @@ body {
 /* line 122, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .jumbotron2 {
   background-color: white;
-  background-image: url("camara.jpg");
+  background-image: url(/assets/camara-8dc739ee12a6ec0d4390fa5114df4c342b314ae82d82538322fd79cb9bb04ccb.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   /* border: 2px solid #d6d2d2; */
@@ -12389,7 +12389,7 @@ body {
 /* line 132, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .jumbotron3 {
   background-color: white;
-  background-image: url("noticiasLector.jpg");
+  background-image: url(/assets/noticiasLector-014a1f67a8c2e42b19dd7bf131f39352a34fa2c7ad282f8ca9e38406c559bcdb.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   /* border: 2px solid #d6d2d2; */
@@ -12411,7 +12411,7 @@ body {
 /* line 151, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .editarProOrg {
   background-color: white;
-  background-image: url("editandoOrg.jpg");
+  background-image: url(/assets/editandoOrg-992a23e920ba8c83d7beef33b004bafcd96d7cb12453ae3356c7804757f48fbf.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   /* border: 2px solid red; */
@@ -12447,7 +12447,7 @@ body {
 /* line 184, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto1 {
   height: 60vh;
-  background-image: url("noticias2.jpeg");
+  background-image: url(/assets/noticias2-4f942c5eb95113dc52c2b8884c25f607d0e1ab28d023f69fe782ad02a39ada43.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   float: right;
@@ -12457,7 +12457,7 @@ body {
 /* line 193, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto5 {
   height: 60vh;
-  background-image: url("createPress.jpeg");
+  background-image: url(/assets/createPress-f2aeafaf3718c25bc523140a6fff2aaf92c2c483fe0079afee39851dd17d6945.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   float: right;
@@ -12477,7 +12477,7 @@ body {
 /* line 212, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .maxalto3 {
   height: 60vh;
-  background-image: url("hombredenegocios2b.jpg");
+  background-image: url(/assets/hombredenegocios2b-a13de3500f54ace63f1c21ac3159c5faf3e552fd3217b4dce9e2e5fea30aa7e0.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   float: right;
@@ -12511,7 +12511,7 @@ body {
 
 /* line 248, /home/refo/proyecto8/app/assets/stylesheets/proyect.css.erb */
 .backSessionUser {
-  background-image: url(./Journalist.jpg);
+  background-image: url(/assets/Journalist-09adf8a22098e346e71fcd6fa13476609bd4818eae918d3af4a2d7575fbea6c0.jpg);
   background-size: cover;
   height: 100vh;
 }
