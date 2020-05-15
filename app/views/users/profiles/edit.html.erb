@@ -24,12 +24,15 @@
         <div class="col-6">
           <div class="form-group">
             <div class="control-label ">
-              <%= form.label :name, "Nombre" %>
+              <%= form.label :name, "Nombre", :for => "validationCustom01" %>
               <div class="input-group">
                   <div class="input-group-prepend">
                       <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
                   </div>
-              <%= form.text_field :name, class: "form-control form-control-sm" %>
+              <%= form.text_field :name, class: "form-control form-control-sm", :id => "validationCustom01", :required => true %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
               </div>
             </div>
           </div>
@@ -37,12 +40,15 @@
         <div class="col-6">
           <div class="form-group">
             <div class="control-label ">
-              <%= form.label :lastname, "Apellido" %>
+              <%= form.label :lastname, "Apellido", :for => "validationCustom02" %>
               <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
                 </div>
-              <%= form.text_field :lastname, class: "form-control form-control-sm" %>
+              <%= form.text_field :lastname, class: "form-control form-control-sm", :id => "validationCustom02", :required => true %>
+              <div class="invalid-feedback">
+               Campo Obligatorio
+             </div>
             </div>
             </div>
           </div>
@@ -65,12 +71,12 @@
     <div class="col-6">
       <div class="form-row">
         <div class="control-label">
-          <%= profile_form.label :phone, "Teléfono", :for => "validationCustom01" %>
+          <%= profile_form.label :phone, "Teléfono", :for => "validationCustom03" %>
           <div class="input-group">
               <div class="input-group-prepend">
                   <span class="input-group-text" id=""><i class="fas fa-phone-volume"></i></span>
               </div>
-          <%= profile_form.text_field :phone, type: "number", class: "form-control form-control-sm", :id => "validationCustom01", :required => true%>
+          <%= profile_form.text_field :phone, type: "number", class: "form-control form-control-sm", :id => "validationCustom03", :required => true%>
           <div class="invalid-feedback">
            Campo Obligatorio
            </div>
@@ -84,12 +90,12 @@
           <div class= "form-group">
             <div class="control-label">
               <% if current_user.influencer? %>
-              <%= profile_form.label :social_network, "Red Social",  :for => "validationCustom02"%>
+              <%= profile_form.label :social_network, "Red Social",  :for => "validationCustom04"%>
               <div class="input-group">
                   <div class="input-group-prepend">
                       <span class="input-group-text" id=""><i class="fas fa-project-diagram"></i></span>
                   </div>
-              <%= profile_form.text_field :social_network, class: "form-control form-control-sm", :id => "validationCustom02", :required => true%>
+              <%= profile_form.text_field :social_network, class: "form-control form-control-sm", :id => "validationCustom04", :required => true%>
               <div class="invalid-feedback">
                Campo Obligatorio
              </div>
@@ -102,12 +108,12 @@
       <div class= "form-group">
         <div class="control-label">
           <% if current_user.influencer? %>
-          <%= profile_form.label :social_network_url, "URL de tu Red Social", :for => "validationCustom03" %>
+          <%= profile_form.label :social_network_url, "URL de tu Red Social", :for => "validationCustom05" %>
           <div class="input-group">
               <div class="input-group-prepend">
                   <span class="input-group-text" id=""><i class="fas fa-user-friends"></i></span>
               </div>
-          <%= profile_form.text_field :social_network_url, class: "form-control form-control-sm", :id => "validationCustom03", :required => true%>
+          <%= profile_form.text_field :social_network_url, class: "form-control form-control-sm", :id => "validationCustom05", :required => true%>
           <div class="invalid-feedback">
            Campo Obligatorio
          </div>
@@ -121,12 +127,12 @@
         <div class="form-group">
           <div class="control-label">
             <% if current_user.tradicional? %>
-            <%= profile_form.label :media_name, "¿En qué medio trabajas?", :for => "validationCustom04" %>
+            <%= profile_form.label :media_name, "¿En qué medio trabajas?", :for => "validationCustom06" %>
             <div class="input-group">
               <div class="input-group-prepend">
                   <span class="input-group-text" id=""><i class="fas fa-file-signature"></i></span>
               </div>
-            <%= profile_form.text_field :media_name, class: "form-control", class: "form-control form-control-sm", :id => "validationCustom03", :required => true%>
+            <%= profile_form.text_field :media_name, class: "form-control", class: "form-control form-control-sm", :id => "validationCustom06", :required => true%>
               <div class="invalid-feedback">
                Campo Obligatorio
              </div>

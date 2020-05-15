@@ -1,8 +1,7 @@
 
 <p>Hola <%= @user.name%> </p>
 
-<p>Lo siento, pero <%=@organizator.name%> rechazó tu solicitud. Puede que <%=@organizator.name%> haya conseguido el número máximo de asistentes  </p>
+<p>Lo siento, pero <%=@organizator.name%> rechazó tu solicitud a la pauta <strong><%= @press_conference.title %></strong>. Puede que <%=@organizator.name%> haya conseguido el número máximo de asistentes  </p>
 
 <hr>
 <p><strong>No te desanimes</strong>, cada día se publican muchas pautas en YoloCubro.com</p>
-<%= @press_conference.title %>

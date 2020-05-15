@@ -1,5 +1,20 @@
 
 <p>Hola <%= @user.name%> </p>
 
-<p> <%=@organizator.name%> aprobó tu solicitud </p>
+<p> <%=@organizator.name%> aprobó tu solicitud a la pauta <strong><%= @press_conference.title %></strong> </p>
+
+ <p><strong>Detalles de la Pauta:</strong></p>
+ <p><%= @press_conference.description %></p>
+ <ul>
+   <ol><strong>Dirección:</strong> <%= @press_conference.address %></ol>
+   <ol><strong>Día:</strong> <%= @press_conference.date %></ol>
+   <ol><strong>Hora:</strong> <%= @press_conference.time %></ol>
+ </ul>
+
+
+
+
+
+
+
 <p>Si tienen alguna consulta nos puedes escribir a <strong><%= @organizator.email %></strong></p>
